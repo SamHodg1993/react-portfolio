@@ -39,6 +39,7 @@
   text-align: center;
   top: 50%;
   font-size: 100%;
+  color: var(--color-white)
 }
 
 @media only screen and (min-width: 1200px){
@@ -196,11 +197,92 @@
   }
 
   .title{
+    color: var(--color-gold);
     font-size: 220%;
   }
 
   .details{
     font-size: 125%;
+  }
+}
+
+/* ********************************* Portfolio ******************************************** */
+.portfolio-container{
+  height: 90vh;
+  background-color: var(--color-gray);
+}
+
+.portfolio-card{
+  height: 250px;
+  width: 80vw;
+  background-color: rgb(32,30,34);
+  margin-left: 50%;
+  margin-bottom: 20px;
+  transform: translate(-50%);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.rst-image{
+  width: 98%;
+  height: auto;
+  margin-top: 10px;
+  margin-left: 5px;
+  opacity: 0.8;
+  border-radius: 10px;
+  transition-duration: 0.5s;
+}
+
+.rst-image:hover{
+  transform: scale(1.2);
+  transition-duration: 0.5s;
+  overflow: hidden;
+  opacity: 0.3;
+}
+
+.to-be-image{
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
+  width: 98%;
+  height: 200px;
+  margin-top: 10px;
+  margin-left: 5px;
+  opacity: 0.8;
+  border-radius: 10px;
+  transition-duration: 0.5s;
+}
+
+.to-be-image:hover{
+  transform: scale(1.2);
+  transition-duration: 0.5s;
+  opacity: 0.3;
+}
+
+.portfolio-card-details{
+  color: var(--color-white);
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media only screen and (min-width: 1200px){
+  .portfolio-container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  
+  .portfolio-card{
+    height: 400px;
+    width: 600px;
+    margin-left: 0;
+    transform: translate(0);
+  }
+
+  .to-be-image{
+    height: 275px;
   }
 }
 
@@ -214,11 +296,12 @@
 
 .footer-title{
   margin-bottom: 20px;
-  font-size: ;
+  font-size: 150%;
 }
 
 .footer-contact-container{
   margin-top: 50px;
+  text-align: center;
 }
 
 .footer-contact{

@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Footer() {
   return (
-    <div className='footer-container'>
+    <div className='footer-container' id="footer">
         <div>
             <h4 className='footer-title'>Available for freelance</h4>
             <p>Have an existing project that you need help with?</p><br />

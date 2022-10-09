@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import MobileNavbar from './components/MobileNavbar';
 import About from './components/About';
 import Footer from './components/Footer';
+import Portfolio from './components/Portfolio';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,6 +14,7 @@ root.render(
     {window.innerWidth > 1200 && <Navbar />}
     <Header />
     <About />
+    <Portfolio />
     <Footer />
   </React.StrictMode>
 );
