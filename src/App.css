@@ -23,14 +23,13 @@
   width: 100%;
   background-color: var(--color-gray);
   color: var(--color-gold);
-  border-bottom: 3px solid red;
 }
 
 .sam-h{
   position: relative;
   width: 100%;
   text-align: center;
-  top: 40%;
+  top: 20%;
   font-size: 500%;
 }
 
@@ -139,13 +138,13 @@
   font-size: 500%;
   margin: 3% 0 0 3%;
   list-style: none;
+  width: fit-content;
 }
 
 .burger-menu-item:hover{
   border-bottom: 3px solid red;
   color: black;
   margin-bottom: -3px;
-  width: 8%;
   cursor: pointer;
 }
 
@@ -154,32 +153,51 @@
   background-color: var(--color-gray);
   display: flex;
   flex-direction: column;
-  height: 90vh;
-  width: 80%;
-  color: var(--color-white);
-  padding: 10%;
+  color: var(--color-white)
 }
 
 .main-image{
   height: auto;
-  width: 30%;
-  margin-left: 50%;
-  margin-bottom: 20%;
+  width: 40%;
+  margin: 5% 0 5% 50%;
   transform: translate(-50%);
+  border-radius: 25px;
 }
 
-.about-list{
+.about-details{
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 80%;
-  list-style: none;
-  padding: 5%;
+  flex-direction: column;
+  text-align: center;
 }
 
-.about-list > li{
-  margin: 1%;
-  background-color: var(--color-green);
-  border-radius: 15px;
-  padding: 2%;
+.about-details > h3 {
+  margin-bottom: 30px;
+}
+
+@media only screen and (min-width: 1200px){
+  .about-container{
+    flex-direction: row;
+  }
+
+  .main-image{
+    width: 20%;
+    margin: 10% 0% 10% 30%;
+  }
+
+  .about-details{
+    justify-content: center;
+  }
+  
+  .about-details-item{
+    font-family: 'Poppins';
+    width: 70%;
+  }
+
+  .title{
+    font-size: 220%;
+  }
+
+  .details{
+    font-size: 125%;
+  }
 }

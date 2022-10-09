@@ -6,16 +6,16 @@ export default function Navbar() {
     <nav className='nav-container'>
         <div className='tobe-logo'>logo here</div>
         <ul className='nav-list'>
-            <li className='nav-item'>
-                <Link smooth={true} offset={-100} duration={500} to="home">
+              <Link smooth={true} offset={-100} duration={500} to="home">
+                <li className='nav-item'>
                   Home
-                </Link>
-              </li>
-            <li className='nav-item'>
-                <Link smooth={true} offset={-50} duration={500} to="about">
+                </li>
+              </Link>
+              <Link smooth={true} offset={-50} duration={500} to="about">
+                <li className='nav-item'>
                   About
-                </Link>  
-              </li>
+                </li>
+              </Link>  
             <li className='nav-item'>Portfolio</li>
             <li className='nav-item'>Contact</li>
         </ul>
