@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import Link from 'react-scroll'
+import { Link } from 'react-scroll'
 
 
 export default function MobileNavbar() {
@@ -24,10 +24,18 @@ export default function MobileNavbar() {
 
         {showMenu === true && 
         <ul className='burger-menu'>
-            <li className='burger-menu-item' onClick={() => handleShowMenu()}>Home</li>
-            <li className='burger-menu-item' onClick={() => handleShowMenu()}>About</li>
-            <li className='burger-menu-item' onClick={() => handleShowMenu()}>Portfolio</li>
-            <li className='burger-menu-item' onClick={() => handleShowMenu()}>Contact</li>
+            <Link smooth={true} offset={-100} duration={700} to="home" >
+                <li className='burger-menu-item' onClick={() => handleShowMenu()}>Home</li>
+            </Link>
+            <Link smooth={true} offset={-50} duration={700} to="about">
+                <li className='burger-menu-item' onClick={() => handleShowMenu()}>About</li>
+            </Link>
+            <Link smooth={true} offset={-65} duration={700} to="portfolio">
+                <li className='burger-menu-item' onClick={() => handleShowMenu()}>Portfolio</li>
+            </Link>
+            <Link smooth={true} offset={-50} duration={700} to="footer">
+                <li className='burger-menu-item' onClick={() => handleShowMenu()}>Contact</li>
+            </Link>
         </ul>
         }
         

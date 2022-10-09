@@ -64,14 +64,9 @@
   z-index: 11;
 }
 
-.tobe-logo{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 70%;
-  width: 120px;
-  background-color: black;
-  margin-left: 40px;
+.nav-logo{
+  height: 100%;
+  margin-left: 20px;
 }
 
 .nav-list{
@@ -111,8 +106,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 15%;
-  height: 100%;
+  width: 10%;
+  height: 70%;
   background-color: var(--color-gold);
   border-radius: 20px;
   padding: 8px;
@@ -154,7 +149,6 @@
   margin-bottom: -3px;
   cursor: pointer;
 }
-
 /* ********************************* About ******************************************** */
 .about-container{
   background-color: var(--color-gray);
@@ -162,6 +156,16 @@
   flex-direction: column;
   color: var(--color-white);
   padding: 50px 20px;
+}
+
+.about-span{
+  color: var(--color-gold);
+  transition-duration: 0.5s;
+}
+
+.about-span:hover{
+  transition-duration: 0.5s;
+  text-decoration: dotted;
 }
 
 .about-title{

@@ -21,7 +21,7 @@ export default function About() {
                 persuing my passion for tech and devleoping. Having a career as a developer never really occurred to me, it was alyways just 
                 a hobby Currently I am most confident devleoping in React and Typescript using Redux for 
                 state management. However my list of competencies is forever growing. <br /><br />If you like what 
-                you hear, dont be a stranger, get in <span onClick={() => scrollToContact()}>touch...</span>
+                you hear, dont be a stranger, get in <span onClick={() => scrollToContact()} className="about-span">touch...</span>
             </p>
         </div>
     </div>

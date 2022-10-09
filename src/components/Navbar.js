@@ -1,10 +1,11 @@
-import React from 'react'
-import {Link} from 'react-scroll'
+import React from 'react';
+import {Link} from 'react-scroll';
+import Logo from '../images/SH.png';
 
 export default function Navbar() {
   return (
     <nav className='nav-container'>
-        <div className='tobe-logo'>logo here</div>
+        <img src={Logo} alt="Sam's Logo" className='nav-logo' />
         <ul className='nav-list'>
             <Link smooth={true} offset={-100} duration={700} to="home">
               <li className='nav-item'>
