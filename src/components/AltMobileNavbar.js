@@ -1,28 +1,27 @@
-import React from 'react'
-import {Link} from 'react-scroll'
+import React from 'react';
+import Link from 'react-scroll';
 
-export default function Navbar() {
+export default function AltMobileNavbar() {
   return (
-    <nav className='nav-container'>
-        <div className='tobe-logo'>logo here</div>
-        <ul className='nav-list'>
+    <div>
+        <ul className='alt-nav-list'>
             <Link smooth={true} offset={-100} duration={700} to="home">
-              <li className='nav-item'>
+              <li className='alt-nav-item'>
                 Home
               </li>
             </Link>
             <Link smooth={true} offset={-50} duration={700} to="about">
-              <li className='nav-item'>
+              <li className='alt-nav-item'>
                 About
               </li>
             </Link> 
             <Link smooth={true} offset={-100} duration={700} to="portfolio"> 
-              <li className='nav-item'>Portfolio</li>
+              <li className='alt-nav-item'>Portfolio</li>
             </Link>
             <Link smooth={true} offset={-50} duration={700} to="footer">
-              <li className='nav-item'>Contact</li>
+              <li className='alt-nav-item'>Contact</li>
             </Link>
         </ul>
-    </nav>
+    </div>
   )
 }

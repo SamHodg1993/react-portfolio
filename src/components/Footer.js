@@ -13,6 +13,7 @@ export default function Footer() {
             <p className='footer-contact'><a className="footer-link"href='mailto:samhodgkinson9192@gmail.com'>Email</a></p>
             <p className='footer-contact'><a className="footer-link"href="https://www.linkedin.com/in/sam-hodgkinson9192/">LinkedIn</a></p>
             <p className='footer-contact'><a className="footer-link"href='https://github.com/SamHodg1993'>Github</a></p>
+            <p className='footer-contact'>Phone: 07521 083 378</p>
         </div>
     </div>
   )

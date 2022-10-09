@@ -85,12 +85,15 @@
   font-family: 'Poppins';
   margin-right: 120px;
   padding: 10px;
+  transition-duration: 0.5s;
 }
 
 .nav-item:hover{
   cursor: pointer;
   padding-bottom: 0; 
-  border-bottom: 3px solid red;
+  color: var(--color-gold);
+  transform: scale(1.6);
+  transition-duration: 0.5s;
 }
 
 /* ********************************* Mobile Navbar ******************************************** */
@@ -111,6 +114,8 @@
   width: 15%;
   height: 100%;
   background-color: var(--color-gold);
+  border-radius: 20px;
+  padding: 8px;
 }
 
 .rotate:hover{
@@ -157,6 +162,11 @@
   flex-direction: column;
   color: var(--color-white);
   padding: 50px 20px;
+}
+
+.about-title{
+  color: var(--color-gold);
+  font-size: 140%;
 }
 
 .main-image{
@@ -210,6 +220,13 @@
 .portfolio-container{
   height: 90vh;
   background-color: var(--color-gray);
+  text-align: center;
+}
+
+.portfolio-title{
+  color: var(--color-gold);
+  padding-bottom: 40px;
+  font-size: 200%;
 }
 
 .portfolio-card{
@@ -270,14 +287,27 @@
 @media only screen and (min-width: 1200px){
   .portfolio-container{
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
     flex-wrap: wrap;
+  }
+
+  .portfolio-title{
+    font-size: 300%;
+    color: var(--color-gold);
+  }
+
+  .portfolio-card-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
   }
   
   .portfolio-card{
     height: 400px;
     width: 600px;
-    margin-left: 0;
+    margin-left: 50px;
     transform: translate(0);
   }
 
@@ -297,6 +327,7 @@
 .footer-title{
   margin-bottom: 20px;
   font-size: 150%;
+  color: var(--color-gold);
 }
 
 .footer-contact-container{
@@ -306,7 +337,21 @@
 
 .footer-contact{
   padding: 10px;
+  transition-duration: 0.5s;
+}
+
+.footer-link{
   text-decoration: none;
+}
+
+.footer-link:hover{
+  color: var(--color-gold);
+}
+
+.footer-contact:hover{
+  transform: scale(1.6);
+  transition-duration: 0.5s;
+  color: var(--color-gold);
 }
 
 .footer-contact > a{
@@ -315,6 +360,11 @@
 
 .footer-contact > a:visited{
   color: var(--color-white);
+}
+
+.footer-contact > a:visited:hover{
+  color: var(--color-white);
+  color: var(--color-gold);
 }
 
 @media only screen and (min-width: 1200px){
