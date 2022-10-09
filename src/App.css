@@ -1,38 +1,84 @@
-.App {
+*{
+  font-family: 'Circular Std Book Bold', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ********************************* Variables ******************************************** */
+
+:root{
+  --color-gray: rgb(48,53,55);
+  --color-gold: rgb(173,148,84);
+  --color-green: rgb(64,88,96);
+  --color-white: rgb(239,238,228);
+
+}
+
+/* ********************************* Header ******************************************** */
+.header-container{
+  height: 90vh;
+  width: 100vw;
+  background-color: var(--color-gray);
+  color: var(--color-gold);
+}
+
+.sam-h{
+  position: relative;
+  width: 100%;
   text-align: center;
+  top: 40%;
+  font-size: 500%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.sam-h-tech-stack{
+  position: relative;
+  width: 100%;
+  text-align: center;
+  top: 50%;
+  font-size: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media only screen and (min-width: 1200px){
+  .sam-h{
+    font-size: 700%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* ********************************* Navbar ******************************************** */
+
+.nav-container{
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  background-color: var(--color-gray);
+  color: var(--color-white);
+  height: 10vh;
+}
+
+.tobe-logo{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 70%;
+  width: 120px;
+  background-color: black;
+  margin-left: 40px;
 }
 
-.App-link {
-  color: #61dafb;
+.nav-list{
+  justify-self: flex-end;
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-item{
+  margin-right: 120px;
+  padding: 10px;
+}
+
+.nav-item:hover{
+  cursor: pointer;
+  padding-bottom: 0; 
+  border-bottom: 3px solid red;
 }
