@@ -1,0 +1,119 @@
+/* ********************************* Variables ******************************************** */
+:root{
+    --color-gray: rgb(48,53,55);
+    --color-lighter-gray: rgb(91,104,105);
+    --color-gold: rgb(173,148,84);
+    --color-green: rgb(64,88,96);
+    --color-white: rgb(239,238,228);
+  
+    transition-duration: 0.6s;
+}
+
+/* ********************************* Portfolio ******************************************** */
+.portfolio-container{
+    height: 90vh;
+    width: 100%;
+    background-color: var(--color-gray);
+    text-align: center;
+  }
+  
+  .portfolio-title{
+    color: var(--color-gold);
+    padding-bottom: 40px;
+    font-size: 200%;
+  }
+  
+  .portfolio-card{
+    height: 250px;
+    width: 80vw;
+    background-color: rgb(32,30,34);
+    margin-left: 50%;
+    margin-bottom: 20px;
+    transform: translate(-50%);
+    overflow: hidden;
+  }
+  
+  .rst-image{
+    width: 100%;
+    height: auto;
+    opacity: 0.8;
+    transition-duration: 0.5s;
+  }
+  
+  .rst-image:hover{
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+    overflow: hidden;
+    opacity: 0.3;
+  }
+  
+  .to-be-image{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    width: 100%;
+    height: 200px;
+    opacity: 0.8;
+    transition-duration: 0.5s;
+  }
+  
+  .portfolio-screenshot{
+    width: 102%;
+    height: 70%;
+    opacity: 0.8;
+    transition-duration: 0.5s;
+  }
+  
+  .portfolio-screenshot:hover{
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+    overflow: hidden;
+    opacity: 0.3;
+  }
+  
+  .to-be-image:hover{
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+    opacity: 0.3;
+  }
+  
+  .portfolio-card-details{
+    color: var(--color-white);
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  @media only screen and (min-width: 1200px){
+    .portfolio-container{
+      display: flex;
+      height: fit-content;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+  
+    .portfolio-title{
+      font-size: 300%;
+      color: var(--color-gold);
+    }
+  
+    .portfolio-card-container{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+    
+    .portfolio-card{
+      height: 400px;
+      width: 600px;
+      margin-left: 50px;
+      transform: translate(0);
+    }
+  
+    .to-be-image{
+      height: 275px;
+    }
+  }

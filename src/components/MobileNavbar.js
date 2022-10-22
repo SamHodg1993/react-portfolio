@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from 'react-scroll'
+import { Link } from 'react-scroll';
+import './Styles/Navbar.css';
 
 
 export default function MobileNavbar() {

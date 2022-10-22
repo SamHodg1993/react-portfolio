@@ -1,6 +1,7 @@
 import React from 'react'
 import SeanTrussHighlands from '../images/SeanTrussHighlands.jpg'
 import PortfolioScreenshot from '../images/PortfolioScreenshot.png'
+import './Styles/Portfolio.css';
 
 function Portfolio() {
   return (

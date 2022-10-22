@@ -1,0 +1,41 @@
+/* ********************************* Variables ******************************************** */
+:root{
+    --color-gray: rgb(48,53,55);
+    --color-lighter-gray: rgb(91,104,105);
+    --color-gold: rgb(173,148,84);
+    --color-green: rgb(64,88,96);
+    --color-white: rgb(239,238,228);
+  
+    transition-duration: 0.6s;
+}
+
+/* ********************************* About Army ******************************************** */
+.about-container-3{
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: var(--color-white)
+  }
+  
+  .sect-3-info-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 30%;
+    height: 100%;
+    text-align: center;
+    font-family: 'Poppins';
+  }
+  
+  .sect-3-title{
+    color: var(--color-gold);
+  }
+  
+  .sect-3-info{
+    font-size: 120%;
+  }
+  
+  .about-sect-3-img{
+    height: 50%;
+  }
