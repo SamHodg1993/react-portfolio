@@ -6,7 +6,6 @@
 }
 
 /* ********************************* Variables ******************************************** */
-
 :root{
   --color-gray: rgb(48,53,55);
   --color-lighter-gray: rgb(91,104,105);
@@ -119,6 +118,7 @@ body{
   transition-duration: 0.3s;
 }
 
+
 /* ********************************* Footer ******************************************** */
 .footer-container{
   height: 50vh;
@@ -180,5 +180,29 @@ body{
     display: flex;
     justify-content: space-evenly;
     margin-top: 6%;
+  }
+}
+    
+
+/* ********************************* Animation effects for about component ******************************************** */
+
+@keyframes inAnimation{
+  0%{
+    opacity: 1;
+    visibility: hidden;
+  }
+  100%{
+    opacity: 0;
+    visibility: visible;
+  }
+}
+
+@keyframes outAnimation{
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    visibility: hidden;
   }
 }

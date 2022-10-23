@@ -9,9 +9,11 @@ import linux from './Technologies/linux.svg';
 import ubuntu from './Technologies/ubuntu.svg';
 import javascript from './Technologies/square-js.svg'
 
-function AboutNow({scrollRight, scrollLeft}) {
+function AboutNow({scrollLeft,  mountedStyle, unmountedStyle, aboutPage}) {
   return (
-    <div className='about-container-now'>
+    <div className='about-container-now'
+        style={aboutPage === 'default' ? mountedStyle : unmountedStyle}
+    >
         <div className="arrow-left" onClick={() => scrollLeft()}>
             <div className="line-top-left"></div>
             <div className="line-bottom-left"></div>

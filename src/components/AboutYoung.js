@@ -2,9 +2,11 @@ import React from 'react';
 import YoungSam from '../images/YoungSam.jpg';
 import './Styles/AboutYoung.css';
 
-function AboutYoung({scrollRight, scrollLeft}) {
+function AboutYoung({scrollRight, scrollLeft, mountedStyle, unmountedStyle, aboutPage}) {
   return (
-  <div className='about-container-2'>
+  <div className='about-container-2'
+    style={aboutPage === 'default' ? mountedStyle : unmountedStyle}
+  >
     <div className="arrow-left" onClick={() => scrollLeft()}>
       <div className="line-top-left"></div>
       <div className="line-bottom-left"></div>

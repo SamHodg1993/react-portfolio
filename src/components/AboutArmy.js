@@ -2,9 +2,11 @@ import React from 'react';
 import ArmyImage from '../images/ArmyImage.jpg';
 import './Styles/AboutArmy.css';
 
-function AboutArmy({scrollRight, scrollLeft}) {
+function AboutArmy({scrollRight, scrollLeft,  mountedStyle, unmountedStyle, aboutPage}) {
   return (
-    <div className='about-container-3'>
+    <div className='about-container-3'
+      style={aboutPage === 'default' ? mountedStyle : unmountedStyle}
+    >
     <div className="arrow-left" onClick={() => scrollLeft()}>
       <div className="line-top-left"></div>
       <div className="line-bottom-left"></div>

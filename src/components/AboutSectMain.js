@@ -2,7 +2,7 @@ import React from 'react';
 import SamAndSon from '../images/SamAndSon.jpg';
 import './Styles/AboutMain.css';
 
-function AboutSectMain({scrollRight}) {
+function AboutSectMain({scrollRight, mountedStyle, unmountedStyle, aboutPage}) {
 
     const scrollToContact = () => {
         window.scrollTo({
@@ -13,7 +13,9 @@ function AboutSectMain({scrollRight}) {
     }
 
   return (
-    <div className='about-container' id="about">
+    <div className='about-container' id="about"
+        style={aboutPage === 'default' ? null : unmountedStyle}
+    >
         <img src={SamAndSon} alt="an pic of Sam and his son" className='main-image'/>
         <div className='about-details'>
             <h3 className='about-details-item about-title'>Hi, I'm Sam, a tech enthusiast. My career in devlopment started as just a hobby...</h3>

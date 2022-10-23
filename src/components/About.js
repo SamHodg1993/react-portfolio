@@ -33,12 +33,20 @@ export default function About() {
         }
     }
 
+    const mountedStyle = {
+        animation: 'inAnimation 0.9s ease-in'
+    }
+    
+    const unmountedStyle = {
+        animation: 'outAnimation 1.1s ease-out'
+    }
+
   return (
     <div className='about-slider' id="about">
-        {aboutPage === 'default' && <AboutSectMain scrollRight={scrollRight}/>}
-        {aboutPage === 'sect2' && <AboutYoung scrollRight={scrollRight} scrollLeft={scrollLeft}/>}
-        {aboutPage === 'army' && <AboutArmy scrollRight={scrollRight} scrollLeft={scrollLeft}/>}
-        {aboutPage === 'now' && <AboutNow scrollRight={scrollRight} scrollLeft={scrollLeft}/>}
+        {aboutPage === 'default' && <AboutSectMain scrollRight={scrollRight} mountedStyle={mountedStyle} unmountedStyle={unmountedStyle} aboutPage={aboutPage}/>}
+        {aboutPage === 'sect2' && <AboutYoung scrollRight={scrollRight} scrollLeft={scrollLeft} mountedStyle={mountedStyle} unmountedStyle={unmountedStyle} aboutPage={aboutPage}/>}
+        {aboutPage === 'army' && <AboutArmy scrollRight={scrollRight} scrollLeft={scrollLeft} mountedStyle={mountedStyle} unmountedStyle={unmountedStyle} aboutPage={aboutPage}/>}
+        {aboutPage === 'now' && <AboutNow scrollRight={scrollRight} scrollLeft={scrollLeft} mountedStyle={mountedStyle} unmountedStyle={unmountedStyle} aboutPage={aboutPage}/>}
     </div>
   )
 }
