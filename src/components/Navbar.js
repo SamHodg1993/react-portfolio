@@ -18,7 +18,7 @@ export default function Navbar() {
                 About
               </li>
             </Link> 
-            <Link smooth={true} offset={-100} duration={700} to="portfolio"> 
+            <Link smooth={true} offset={0} duration={700} to="portfolio"> 
               <li className='nav-item'>Portfolio</li>
             </Link>
             <Link smooth={true} offset={-50} duration={700} to="footer">

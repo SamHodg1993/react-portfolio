@@ -6,7 +6,6 @@ import './Styles/Portfolio.css';
 function Portfolio() {
   return (
     <div className='portfolio-container' id="portfolio">
-        <h2 className='portfolio-title'>Portfolio</h2>
         <div className='portfolio-card-container'>
             <div className='portfolio-card'>
             <a href="https://github.com/SamHodg1993/rst-mobile" target="_blank" rel="noreferrer"><img src={SeanTrussHighlands} alt="RST pic" className='rst-image'/></a>
