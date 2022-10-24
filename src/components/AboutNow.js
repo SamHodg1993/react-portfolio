@@ -8,6 +8,7 @@ import react from './Technologies/react.svg';
 import linux from './Technologies/linux.svg';
 import ubuntu from './Technologies/ubuntu.svg';
 import javascript from './Technologies/square-js.svg'
+import sass from './Technologies/sass.svg'
 
 function AboutNow({scrollLeft,  mountedStyle, unmountedStyle, aboutPage}) {
   return (
@@ -27,6 +28,7 @@ function AboutNow({scrollLeft,  mountedStyle, unmountedStyle, aboutPage}) {
             <img src={github} alt="github" className='tech-logo'/>
             <img src={linux} alt="linux" className='tech-logo'/>
             <img src={ubuntu} alt="ubuntu" className='tech-logo'/>
+            <img src={sass} alt="sass" className='tech-logo'/>
         </div>
         <div className="sect-now-info-wrapper">
             <h1 className='sect-now-title'>Now</h1>
