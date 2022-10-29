@@ -1,36 +1,32 @@
 import React, { useState } from 'react'
 
-import AboutYoung from './AboutYoung';
-import AboutSectMain from './AboutSectMain';
-import AboutArmy from './AboutArmy';
-import AboutNow from './AboutNow'
+import AboutData from './Data/AboutData';
+import SamAndSon from '../images/SamAndSon.jpg';
+import YoungSam from '../images/YoungSam.jpg';
+import ArmyImage from '../images/ArmyImage.jpg';
+import '../App.css'
 
 export default function About() {
 
-    const [aboutPage, setAboutPage] = useState('default');
+    const [aboutPage, setAboutPage] = useState(0);
+    const [count, setCount] = useState(0)
 
     const scrollRight = () => {
-        if(aboutPage === 'default') {
-            setAboutPage('sect2');
+        if(count < 3) {
+            setCount(count + 1)
+        }else {
+            setCount(2)
         }
-        if(aboutPage === 'sect2') {
-            setAboutPage('army');
-        }
-        if(aboutPage === 'army') {
-            setAboutPage('now');
-        }
+        setAboutPage(count);
     }
 
     const scrollLeft = () => {
-        if(aboutPage === 'now') {
-            setAboutPage('army');
+        if(count > 0) {
+            setCount(count - 1)
+        }else {
+            setCount(0)
         }
-        if(aboutPage === 'army') {
-            setAboutPage('sect2');
-        }
-        if(aboutPage === 'sect2') {
-            setAboutPage('default');
-        }
+        setAboutPage(count);
     }
 
     const mountedStyle = {
@@ -43,10 +39,12 @@ export default function About() {
 
   return (
     <div className='about-slider' id="about">
-        {aboutPage === 'default' && <AboutSectMain scrollRight={scrollRight} mountedStyle={mountedStyle} unmountedStyle={unmountedStyle} aboutPage={aboutPage}/>}
-        {aboutPage === 'sect2' && <AboutYoung scrollRight={scrollRight} scrollLeft={scrollLeft} mountedStyle={mountedStyle} unmountedStyle={unmountedStyle} aboutPage={aboutPage}/>}
-        {aboutPage === 'army' && <AboutArmy scrollRight={scrollRight} scrollLeft={scrollLeft} mountedStyle={mountedStyle} unmountedStyle={unmountedStyle} aboutPage={aboutPage}/>}
-        {aboutPage === 'now' && <AboutNow scrollRight={scrollRight} scrollLeft={scrollLeft} mountedStyle={mountedStyle} unmountedStyle={unmountedStyle} aboutPage={aboutPage}/>}
+        <button onClick={() => scrollLeft()}>Left</button>
+        <button onClick={() => scrollRight()}>Right</button>
+        <img src={count === 0 ? SamAndSon : count === 1 ? YoungSam : ArmyImage} alt="sam in the relevent year" style={{width:'30%'}}/>
+        <h1>{AboutData[count].header}</h1>
+        <p>{AboutData[count].info}</p>
+
     </div>
   )
 }
