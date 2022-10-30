@@ -13,7 +13,7 @@ export default function Navbar() {
                 Home
               </li>
             </Link>
-            <Link smooth={true} offset={-50} duration={700} to="about">
+            <Link smooth={true} offset={-100} duration={700} to="about">
               <li className='nav-item'>
                 About
               </li>

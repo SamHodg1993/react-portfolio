@@ -50,78 +50,9 @@ body{
   }
 }
 
-
-/* ********************************* About Buttons ******************************************** */
-.arrow-right{
-  justify-self: flex-end;
-  align-self: center;
-  margin-right: 100px;
-  height: 90px;
-  width: 50px;
-  border-radius: 15%;
-  transition-duration: 0.3s;
-}
-
-.line-top{
-  position: relative;
-  height: 5px;
-  width: 50px;
-  background-color: white;
-  transform: rotate(50deg);
-  top: 25px;
-}
-
-.line-bottom{
-  position: relative;
-  height: 5px;
-  width: 50px;
-  background-color: white;
-  transform: rotate(-50deg);
-  top: 55px;
-}
-
-.arrow-left{
-  justify-self: flex-end;
-  align-self: center;
-  margin-left: 50px;
-  height: 90px;
-  width: 50px;
-  border-radius: 15%;
-  transition-duration: 0.3s;
-}
-
-.line-top-left{
-  position: relative;
-  height: 5px;
-  width: 50px;
-  background-color: white;
-  transform: rotate(-50deg);
-  top: 25px;
-}
-
-.line-bottom-left{
-  position: relative;
-  height: 5px;
-  width: 50px;
-  background-color: white;
-  transform: rotate(50deg);
-  top: 55px;
-}
-
-.arrow-right:hover{
-  transform: scale(1.2);
-  transition-duration: 0.3s;
-}
-
-.arrow-left:hover{
-  transform: scale(1.2);
-  transition-duration: 0.3s;
-}
-
-
 /* ********************************* Footer ******************************************** */
 .footer-container{
-  height: 50vh;
+  height: 70vh;
   background-color: black;
   color: var(--color-white);
   padding: 50px 20px 0 20%;
@@ -171,6 +102,10 @@ body{
 }
 
 @media only screen and (min-width: 1200px){
+  .footer-container{
+    height: 55vh
+  }
+
   .footer-title{
     font-size: 300%;
     margin-bottom: 8%;

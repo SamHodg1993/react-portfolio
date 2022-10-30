@@ -25,7 +25,7 @@ export default function About() {
         if(count < 3) {
             setCount(count + 1)
         }else {
-            setCount(2)
+            setCount(3)
         }
     }
 
@@ -47,22 +47,34 @@ export default function About() {
 
   return (
     <div className='about-slider' id="about">
-        <button onClick={() => scrollLeft()}>Left</button>
-        <button onClick={() => scrollRight()}>Right</button>
-        {count < 3 ? <img src={count === 0 ? SamAndSon : count === 1 ? YoungSam : ArmyImage} alt="sam in the relevent year" style={{width:'30%'}}/> : 
-        <div className="skills">
-            <img src={html5} alt="html5" className='tech-logo'/>
-            <img src={CSS} alt="css" className='tech-logo'/>
-            <img src={javascript} alt="github" className='tech-logo'/>
-            <img src={react} alt="react" className='tech-logo'/>
-            <img src={git} alt="git" className='tech-logo'/>
-            <img src={github} alt="github" className='tech-logo'/>
-            <img src={linux} alt="linux" className='tech-logo'/>
-            <img src={python} alt="python" className='tech-logo'/>
-            <img src={sass} alt="sass" className='tech-logo'/>
-        </div>}
-        <h1>{AboutData[count].header}</h1>
-        <p>{AboutData[count].info}</p>
+        <div className='about-buttons'>
+            <div className="arrow-left" onClick={() => scrollLeft()}>
+                <div className="line-top-left"></div>
+                <div className="line-bottom-left"></div>
+            </div>
+            <div className="arrow-right" onClick={() => scrollRight()}>
+                <div className="line-top"></div>
+                <div className="line-bottom"></div>
+            </div>
+        </div>
+        <div className='about-info-container'>
+            {count < 3 ? <img src={count === 0 ? SamAndSon : count === 1 ? YoungSam : ArmyImage} alt="sam in the relevent year" className='about-image'/> : 
+            <div className="skills">
+                <img src={html5} alt="html5" className='tech-logo'/>
+                <img src={CSS} alt="css" className='tech-logo'/>
+                <img src={javascript} alt="github" className='tech-logo'/>
+                <img src={react} alt="react" className='tech-logo'/>
+                <img src={git} alt="git" className='tech-logo'/>
+                <img src={github} alt="github" className='tech-logo'/>
+                <img src={linux} alt="linux" className='tech-logo'/>
+                <img src={python} alt="python" className='tech-logo'/>
+                <img src={sass} alt="sass" className='tech-logo'/>
+            </div>}
+            <div>
+            <h1 className='about-header'>{AboutData[count].header}</h1>
+            <p className='about-info-text'>{AboutData[count].info}</p>
+            </div>
+        </div>
 
     </div>
   )
