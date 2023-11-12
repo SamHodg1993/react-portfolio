@@ -103,7 +103,7 @@ function Portfolio() {
               target="_blank"
               rel="noreferrer"
             >
-              Repo
+              Site
             </p>
           </span>
         </div>
