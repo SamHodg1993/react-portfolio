@@ -2,8 +2,10 @@ import React, { useState } from "react";
 
 import AboutData from "./Data/AboutData";
 import SamAndSon from "../images/SamAndSon.jpg";
+import SamAndSonNoBG from "../images/SamAndSon-removebg-preview.png";
 import YoungSam from "../images/YoungSam.jpg";
 import ArmyImage from "../images/ArmyImage.jpg";
+import YoungSamNoBG from "../images/YoungSam-removebg-preview.png";
 import "../App.css";
 import "./Styles/AboutCR.css";
 
@@ -58,7 +60,7 @@ export default function About() {
       </div>
       <div className="about-info-container" id="about-info-container">
         {count < 3 ? (
-          <img src={count === 0 ? SamAndSon : count === 1 ? YoungSam : ArmyImage} alt="sam in the relevent year" className="about-image" />
+          <img src={count === 0 ? SamAndSonNoBG : count === 1 ? YoungSamNoBG : ArmyImage} alt="sam in the relevent year" className="about-image" />
         ) : (
           <div className="skills">
             <img src={html5} alt="html5" className="tech-logo" />
