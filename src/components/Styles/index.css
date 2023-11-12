@@ -1,0 +1,30 @@
+/* Scrollbar Track */
+::-webkit-scrollbar-track {
+  background-color: #1e1e1e;
+}
+
+/* Scrollbar Thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #757575;
+  border-radius: 10px;
+}
+
+/* Scrollbar Thumb on Hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a0a0a0;
+}
+
+/* Scrollbar Button */
+::-webkit-scrollbar-button {
+  background-color: #1e1e1e;
+  display: none;
+}
+
+/* Scrollbar Corner */
+::-webkit-scrollbar-corner {
+  background-color: #1e1e1e;
+}
+/* Chrome */
+::-webkit-scrollbar {
+  width: 10px;
+}
