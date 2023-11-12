@@ -19,6 +19,26 @@
 body {
   background-color: var(--color-gray);
 }
+
+button {
+  background-color: var(--color-green);
+  color: var(--color-white);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  height: 3em;
+  width: 12em;
+  border-radius: 10px;
+  font-size: 100%;
+  font-weight: bold;
+  margin: 0.3rem 1rem;
+
+  transition-duration: 0.3s;
+}
+
+button:hover {
+  box-shadow: 5px 5px 10px 5px var(--color-shadow);
+  color: var(--color-gold);
+}
+
 /* ********************************* Header ******************************************** */
 .header-container {
   height: 90vh;
@@ -49,6 +69,14 @@ body {
   .sam-h {
     font-size: 700%;
   }
+}
+
+.sam-h-tech-stack > a {
+  color: var(--color-white);
+}
+
+.sam-h-tech-stack > a:hover {
+  color: var(--color-gold);
 }
 
 /* ********************************* Footer ******************************************** */
