@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Git Cheatsheet</title>
+    <style>
+      :root {
+        --color-gray: rgb(48, 53, 55);
+        --color-lighter-gray: rgb(91, 104, 105);
+        --color-gold: rgb(173, 148, 84);
+        --color-green: rgb(64, 88, 96);
+        --color-white: rgb(239, 238, 228);
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px 80px;
+        background-color: var(--color-gray);
+        color: var(--color-white);
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        font-size: 120%;
+      }
+
+      th {
+        background-color: var(--color-lighter-gray);
+      }
+
+      .table-title {
+        font-weight: bold;
+        font-size: 80%;
+        background-color: var(--color-lighter-gray);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Git Cheatsheet</h1>
+    <table>
+      <tr>
+        <th>Command</th>
+        <th>Description</th>
+        <th>Notes</th>
+      </tr>
+
+      <tr class="table-title">
+        <td></td>
+        <td colspan="3">Most Useful</td>
+      </tr>
+      <tr>
+        <td>git status</td>
+        <td>Show the status of the working directory</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>git stash</td>
+        <td>Stash changes temporarile</td>
+        <td>Hint... You will love this!</td>
+      </tr>
+      <tr>
+        <td>git stash pop</td>
+        <td>Regain stashed changes</td>
+        <td>Hint... You will love this even more!!!</td>
+      </tr>
+
+      <tr class="table-title">
+        <td></td>
+        <td colspan="3">GIT config</td>
+      </tr>
+      <tr>
+        <td>git config --global user.name "[name]"</td>
+        <td>Set the name you want attached to your commits</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>git config --global user.email "[email address]"</td>
+        <td>Set the email you want attached to your commits</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>git config --global color.ui auto</td>
+        <td>Enable helpful colorization of command line output</td>
+        <td>[normal, black, red, green, yellow, blue, magenta, cyan, white]</td>
+      </tr>
+      <tr>
+        <td>git config --global core.editor "[editor]"</td>
+        <td>Set the text editor used by commands for all users on the system</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>git config --global core.autocrlf input</td>
+        <td>Configure Git to properly handle line endings</td>
+        <td></td>
+      </tr>
+
+      <tr class="table-title">
+        <td></td>
+        <td colspan="3">GIT Credentials</td>
+      </tr>
+      <tr>
+        <td>git config credential.helper store</td>
+        <td>Save credentials in memory for use by future Git programs</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>git config --global credential.helper cache</td>
+        <td>Save credentials in memory for use by future Git programs</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>git config --global credential.helper 'cache --timeout=3600'</td>
+        <td>Save credentials in memory for use by future Git programs</td>
+        <td></td>
+      </tr>
+
+      <tr class="table-title">
+        <td></td>
+        <td colspan="3">Initializing</td>
+      </tr>
+      <tr>
+        <td>git init</td>
+        <td>Initialize a new Git repository</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>git clone [repository_url]</td>
+        <td>Clone a remote repository</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>git remote add origin [repository_url]</td>
+        <td>Add a remote repository</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>git add [file]</td>
+        <td>Add a file to the staging area</td>
+        <td>Can also use a "." for to add all files not mentioned in the .gitignore files</td>
+      </tr>
+
+      <tr class="table-title">
+        <td></td>
+        <td colspan="3">Basics</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>git status</td>
+        <td>Show the status of the working directory</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>git commit -m "[message]"</td>
+        <td>Commit changes with a message</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>git push</td>
+        <td>Push changes to a remote repository</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>git pull</td>
+        <td>Pull changes from a remote repository</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>git branch</td>
+        <td>List all branches</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>git checkout [branch]</td>
+        <td>Switch to a different branch</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>git merge [branch]</td>
+        <td>Merge changes from a branch</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>git log</td>
+        <td>Show commit history</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>git diff</td>
+        <td>Show changes between commits, commit and working tree, etc</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>git reset [file]</td>
+        <td>Unstage a file</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>git rm [file]</td>
+        <td>Remove a file from the working directory and staging area</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>git mv [file]</td>
+        <td>Move or rename a file</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>git tag [tag]</td>
+        <td>Create a tag for a specific commit</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>git fetch</td>
+        <td>Download objects and refs from another repository</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>git remote -v</td>
+        <td>Show remote repositories</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>git remote show [remote]</td>
+        <td>Show information about a remote</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>git remote update</td>
+        <td>Fetch updates from a remote</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>git remote remove [remote]</td>
+        <td>Remove a remote</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>git remote rename [old_name] [new_name]</td>
+        <td>Rename a remote</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>git remote set-url [remote] [url]</td>
+        <td>Change the URL of a remote</td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>

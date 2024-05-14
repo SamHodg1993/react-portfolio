@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Cheatsheet</title>
+    <style>
+      :root {
+        --color-gray: rgb(48, 53, 55);
+        --color-lighter-gray: rgb(91, 104, 105);
+        --color-gold: rgb(173, 148, 84);
+        --color-green: rgb(64, 88, 96);
+        --color-white: rgb(239, 238, 228);
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px 80px;
+        background-color: var(--color-gray);
+        color: var(--color-white);
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        font-size: 120%;
+      }
+
+      th {
+        background-color: var(--color-lighter-gray);
+      }
+
+      .table-title {
+        font-weight: bold;
+        font-size: 80%;
+        background-color: var(--color-lighter-gray);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>React Cheatsheet</h1>
+    <table>
+      <tr>
+        <th>Code Snippet</th>
+        <th>Description</th>
+        <th>Notes</th>
+      </tr>
+
+      <tr class="table-title">
+        <td></td>
+        <td colspan="3">Components</td>
+      </tr>
+      <tr>
+        <td>
+          import React from 'react';<br /><br />
+          const MyComponent = () => {<br />
+          &nbsp;&nbsp;return &lt;div&gt;Hello, World!&lt;/div&gt;;<br />
+          };<br /><br />
+          export default MyComponent;
+        </td>
+        <td>Create a functional component</td>
+        <td>Functional components are simple functions</td>
+      </tr>
+      <tr>
+        <td>
+          import React, { Component } from 'react';<br /><br />
+          class MyComponent extends Component {<br />
+          &nbsp;&nbsp;render() {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;return &lt;div&gt;Hello, World!&lt;/div&gt;;<br />
+          &nbsp;&nbsp;}<br />
+          }<br /><br />
+          export default MyComponent;
+        </td>
+        <td>Create a class component</td>
+        <td>Class components have state and lifecycle methods</td>
+      </tr>
+
+      <tr class="table-title">
+        <td></td>
+        <td colspan="3">JSX</td>
+      </tr>
+      <tr>
+        <td>&lt;div&gt;Hello, World!&lt;/div&gt;</td>
+        <td>JSX element</td>
+        <td>JSX is a syntax extension for React</td>
+      </tr>
+      <tr>
+        <td>{variable}</td>
+        <td>Render a JavaScript variable</td>
+        <td>Use curly braces to embed expressions in JSX</td>
+      </tr>
+      <tr>
+        <td>&lt;MyComponent prop={value} /&gt;</td>
+        <td>Pass props to a component</td>
+        <td>Props are read-only and passed down from parent components</td>
+      </tr>
+
+      <tr class="table-title">
+        <td></td>
+        <td colspan="3">State and Lifecycle</td>
+      </tr>
+      <tr>
+        <td>
+          constructor(props) {<br />
+          &nbsp;&nbsp;super(props);<br />
+          &nbsp;&nbsp;this.state = { count: 0 };<br />
+          }
+        </td>
+        <td>Initialize state in a class component</td>
+        <td>State is mutable and private to a component</td>
+      </tr>
+      <tr>
+        <td>this.setState({ count: this.state.count + 1 })</td>
+        <td>Update state</td>
+        <td>Always use setState to update state</td>
+      </tr>
+      <tr>
+        <td>
+          componentDidMount() {<br />
+          &nbsp;&nbsp;// code to run after component mounts<br />
+          }
+        </td>
+        <td>Lifecycle method</td>
+        <td>componentDidMount is called once after the initial render</td>
+      </tr>
+
+      <tr class="table-title">
+        <td></td>
+        <td colspan="3">Hooks</td>
+      </tr>
+      <tr>
+        <td>
+          import React, { useState } from 'react';<br /><br />
+          const MyComponent = () => {<br />
+          &nbsp;&nbsp;const [count, setCount] = useState(0);<br />
+          &nbsp;&nbsp;// ...<br />
+          };
+        </td>
+        <td>Use the useState hook</td>
+        <td>Hooks allow functional components to have state</td>
+      </tr>
+      <tr>
+        <td>
+          import React, { useEffect } from 'react';<br /><br />
+          const MyComponent = () => {<br />
+          &nbsp;&nbsp;useEffect(() => {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;// code to run after component mounts<br />
+          &nbsp;&nbsp;}, []);<br />
+          &nbsp;&nbsp;// ...<br />
+          };
+        </td>
+        <td>Use the useEffect hook</td>
+        <td>useEffect allows functional components to have lifecycle methods</td>
+      </tr>
+    </table>
+  </body>
+</html>

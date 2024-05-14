@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript Cheatsheet</title>
+    <style>
+      :root {
+        --color-gray: rgb(48, 53, 55);
+        --color-lighter-gray: rgb(91, 104, 105);
+        --color-gold: rgb(173, 148, 84);
+        --color-green: rgb(64, 88, 96);
+        --color-white: rgb(239, 238, 228);
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px 80px;
+        background-color: var(--color-gray);
+        color: var(--color-white);
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        font-size: 120%;
+      }
+
+      th {
+        background-color: var(--color-lighter-gray);
+      }
+
+      .table-title {
+        font-weight: bold;
+        font-size: 80%;
+        background-color: var(--color-lighter-gray);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JavaScript Cheatsheet</h1>
+    <table>
+      <tr>
+        <th>Code Snippet</th>
+        <th>Description</th>
+        <th>Notes</th>
+      </tr>
+
+      <tr class="table-title">
+        <td></td>
+        <td colspan="3">Variables and Data Types</td>
+      </tr>
+      <tr>
+        <td>let x = 5;</td>
+        <td>Declare a variable with let</td>
+        <td>Use let for block-scoped variables</td>
+      </tr>
+      <tr>
+        <td>const y = 10;</td>
+        <td>Declare a constant variable</td>
+        <td>Constants cannot be reassigned</td>
+      </tr>
+      <tr>
+        <td>var z = true;</td>
+        <td>Declare a variable with var</td>
+        <td>var has function or global scope</td>
+      </tr>
+
+      <tr class="table-title">
+        <td></td>
+        <td colspan="3">Strings</td>
+      </tr>
+      <tr>
+        <td>let str = "Hello";</td>
+        <td>Create a string</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>str.length;</td>
+        <td>Get the length of a string</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>str.toUpperCase();</td>
+        <td>Convert a string to uppercase</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>str.toLowerCase();</td>
+        <td>Convert a string to lowercase</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>str.includes("ell");</td>
+        <td>Check if a string contains a substring</td>
+        <td></td>
+      </tr>
+
+      <tr class="table-title">
+        <td></td>
+        <td colspan="3">Arrays</td>
+      </tr>
+      <tr>
+        <td>let arr = [1, 2, 3];</td>
+        <td>Create an array</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>arr.length;</td>
+        <td>Get the length of an array</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>arr.push(4);</td>
+        <td>Add an element to the end of an array</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>arr.pop();</td>
+        <td>Remove the last element from an array</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>arr.forEach(function(item) {...});</td>
+        <td>Iterate over an array</td>
+        <td></td>
+      </tr>
+
+      <tr class="table-title">
+        <td></td>
+        <td colspan="3">Functions</td>
+      </tr>
+      <tr>
+        <td>
+          function greet(name) {<br />
+          &nbsp;&nbsp;console.log("Hello, " + name);<br />
+          }
+        </td>
+        <td>Define a function</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>greet("John");</td>
+        <td>Call a function</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          const square = (x) => x * x;<br />
+          console.log(square(5));
+        </td>
+        <td>Arrow function</td>
+        <td>Shorthand for defining functions</td>
+      </tr>
+
+      <tr class="table-title">
+        <td></td>
+        <td colspan="3">DOM Manipulation</td>
+      </tr>
+      <tr>
+        <td>document.getElementById("id");</td>
+        <td>Get an element by its ID</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>document.getElementsByClassName("class");</td>
+        <td>Get elements by their class name</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>element.innerHTML = "Hello, World!";</td>
+        <td>Set the inner HTML of an element</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>element.style.color = "red";</td>
+        <td>Set the style of an element</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>element.addEventListener("click", function() {...});</td>
+        <td>Add an event listener to an element</td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>

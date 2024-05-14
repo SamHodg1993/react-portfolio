@@ -4,11 +4,38 @@ import PortfolioScreenshot from "../images/PortfolioScreenshot.png";
 import DressCodeScreenshot from "../images/DressCodeScreenshot.jpg";
 import Razorthorn from "../images/Razorthorn.jpg";
 import Argyll from "../images/Argyll.jpg";
+import Modal from "react-modal";
 import "./Styles/Portfolio.css";
 
 function Portfolio() {
+  const [modalIsOpen, setModalIsOpen] = React.useState(false);
+  const [modalContent, setModalContent] = React.useState(<></>);
+
+  const modalStyle = {
+    content: {
+      top: "50%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      width: "40vw",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+      padding: "1rem 2rem",
+      border: "none",
+      borderRadius: "10px",
+      backgroundColor: "rgba(255, 255, 255, 0.9)",
+    },
+    overlay: {
+      backgroundColor: "rgba(0, 0, 0, 0.5)",
+    },
+  };
+
   return (
     <div className="portfolio-container" id="portfolio">
+      <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)} style={modalStyle}>
+        {modalContent}
+      </Modal>
+
       <div className="portfolio-card-container">
         <div className="portfolio-card">
           <img src={SeanTrussHighlands} alt="RST pic" className="rst-image" />
@@ -45,7 +72,14 @@ function Portfolio() {
             <p
               className="private-repo"
               onClick={() => {
-                window.alert("Sorry, this is a private repository");
+                // window.alert("Sorry, this is a private repository");
+                setModalContent(
+                  <div className="modal-container">
+                    <h1 className="modal-title">DressCode</h1>
+                    <p className="modal-text">This project is currently in development from a volunteer group called the Scottish Tech Army. As such has a private repo.</p>
+                  </div>
+                );
+                setModalIsOpen(true);
               }}
             >
               Repo
@@ -64,16 +98,37 @@ function Portfolio() {
             <p
               className="private-repo"
               onClick={() => {
-                window.alert("Sorry, this is a private repository");
+                // window.alert("Sorry, this is a private repository");
+                setModalContent(
+                  <div className="modal-container">
+                    <h1 className="modal-title">Argyll</h1>
+                    <p className="modal-text">This project is currently in development from a volunteer group called the Scottish Tech Army. As such has a private repo.</p>
+                  </div>
+                );
+                setModalIsOpen(true);
               }}
               target="_blank"
               rel="noreferrer"
             >
               Repo
             </p>
-            <a href="https://dresscodedev.org.uk/" target="_blank" rel="noreferrer">
+            <p
+              className="private-repo"
+              onClick={() => {
+                // window.alert("Coming soon...");
+                setModalContent(
+                  <div className="modal-container">
+                    <h1 className="modal-title">Argyll</h1>
+                    <p className="modal-text">This project is currently in development. Please check back soon for updates.</p>
+                  </div>
+                );
+                setModalIsOpen(true);
+              }}
+              target="_blank"
+              rel="noreferrer"
+            >
               Site
-            </a>
+            </p>
           </span>
         </div>
         <div className="portfolio-card">
@@ -85,7 +140,20 @@ function Portfolio() {
             <p
               className="private-repo"
               onClick={() => {
-                window.alert("Sorry, this is a private repository");
+                // window.alert("Sorry, this is a private repository");
+                setModalContent(
+                  <div className="modal-container">
+                    <h1 className="modal-title">Razors Edge</h1>
+                    <p className="modal-text">
+                      This is an invite only production solution for large scale vulnerability management. If you are interested in this service, please visit the Razorthorn
+                      website and contact them for more information.
+                    </p>
+                    <a href="https://www.razorthorn.com/contact-us/" target="_blank" rel="noreferrer" className="modal-link">
+                      Razorthorn Website
+                    </a>
+                  </div>
+                );
+                setModalIsOpen(true);
               }}
               target="_blank"
               rel="noreferrer"
@@ -98,7 +166,22 @@ function Portfolio() {
             <p
               className="private-repo"
               onClick={() => {
-                window.alert("Coming soon...");
+                // window.alert(
+                //   "This is an invite only production solution for large scale vulnerability management... Interested? See https://www.razorthorn.com/contact-us/ for more information"
+                // );
+                setModalContent(
+                  <div className="modal-container">
+                    <h1 className="modal-title">Razors Edge</h1>
+                    <p className="modal-text">
+                      This is an invite only production solution for large scale vulnerability management. If you are interested in this service, please visit the Razorthorn
+                      website and contact them for more information.
+                    </p>
+                    <a href="https://www.razorthorn.com/contact-us/" target="_blank" rel="noreferrer" className="modal-link">
+                      Razorthorn Website
+                    </a>
+                  </div>
+                );
+                setModalIsOpen(true);
               }}
               target="_blank"
               rel="noreferrer"

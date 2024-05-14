@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Linux Commands Cheatsheet</title>
+    <style>
+      :root {
+        --color-gray: rgb(48, 53, 55);
+        --color-lighter-gray: rgb(91, 104, 105);
+        --color-green: rgb(64, 88, 96);
+        --color-white: rgb(239, 238, 228);
+      }
+
+      body {
+        font-family: monospace;
+        margin: 20px 80px;
+        background-color: var(--color-gray);
+        color: var(--color-white);
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        font-size: 120%;
+      }
+
+      th {
+        background-color: var(--color-lighter-gray);
+      }
+
+      .table-title {
+        font-weight: bold;
+        font-size: 80%;
+        background-color: var(--color-lighter-gray);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Linux Commands Cheatsheet</h1>
+    <table>
+      <tr>
+        <th>Command</th>
+        <th>Description</th>
+        <th>Example</th>
+      </tr>
+
+      <tr class="table-title">
+        <td></td>
+        <td colspan="3">Useful</td>
+      </tr>
+      <tr>
+        <td>history||grep ssh</td>
+        <td>Search for previous used commands this is searching for commands containing "ssh"</td>
+        <td>Super useful for getting ip's etc...</td>
+      </tr>
+
+      <tr class="table-title">
+        <td></td>
+        <td colspan="3">Navigation</td>
+      </tr>
+      <tr>
+        <td>pwd</td>
+        <td>Print the current working directory</td>
+        <td>pwd</td>
+      </tr>
+      <tr>
+        <td>cd</td>
+        <td>Change directory</td>
+        <td>cd /path/to/directory</td>
+      </tr>
+      <tr>
+        <td>ls</td>
+        <td>List files and directories</td>
+        <td>ls -l (long listing)</td>
+      </tr>
+
+      <tr class="table-title">
+        <td></td>
+        <td colspan="3">File Operations</td>
+      </tr>
+      <tr>
+        <td>cp</td>
+        <td>Copy files and directories</td>
+        <td>cp file1.txt file2.txt</td>
+      </tr>
+      <tr>
+        <td>mv</td>
+        <td>Move or rename files and directories</td>
+        <td>mv file.txt new_file.txt</td>
+      </tr>
+      <tr>
+        <td>rm</td>
+        <td>Remove files and directories</td>
+        <td>rm file.txt</td>
+      </tr>
+
+      <tr class="table-title">
+        <td></td>
+        <td colspan="3">Text Manipulation</td>
+      </tr>
+      <tr>
+        <td>cat</td>
+        <td>Concatenate and print files</td>
+        <td>cat file.txt</td>
+      </tr>
+      <tr>
+        <td>grep</td>
+        <td>Search for patterns in files</td>
+        <td>grep pattern file.txt</td>
+      </tr>
+      <tr>
+        <td>sed</td>
+        <td>Stream editor for editing files</td>
+        <td>sed 's/old/new/g' file.txt</td>
+      </tr>
+
+      <tr class="table-title">
+        <td></td>
+        <td colspan="3">Process Management</td>
+      </tr>
+      <tr>
+        <td>ps</td>
+        <td>List running processes</td>
+        <td>ps aux</td>
+      </tr>
+      <tr>
+        <td>kill</td>
+        <td>Terminate a process</td>
+        <td>kill process_id</td>
+      </tr>
+      <tr>
+        <td>top</td>
+        <td>Display system resource usage</td>
+        <td>top</td>
+      </tr>
+
+      <tr class="table-title">
+        <td></td>
+        <td colspan="3">Permissions</td>
+      </tr>
+      <tr>
+        <td>chmod</td>
+        <td>Change file permissions</td>
+        <td>chmod +x script.sh</td>
+      </tr>
+      <tr>
+        <td>chown</td>
+        <td>Change file ownership</td>
+        <td>chown user:group file.txt</td>
+      </tr>
+
+      <tr class="table-title">
+        <td></td>
+        <td colspan="3">System Information</td>
+      </tr>
+      <tr>
+        <td>uname</td>
+        <td>Print system information</td>
+        <td>uname -a</td>
+      </tr>
+      <tr>
+        <td>df</td>
+        <td>Display disk space usage</td>
+        <td>df -h</td>
+      </tr>
+      <tr>
+        <td>du</td>
+        <td>Display disk usage for files and directories</td>
+        <td>du -sh /path/to/directory</td>
+      </tr>
+    </table>
+  </body>
+</html>

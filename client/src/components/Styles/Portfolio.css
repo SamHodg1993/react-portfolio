@@ -173,3 +173,25 @@
     height: 275px;
   }
 }
+
+.modal-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+
+  .modal-link {
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-gold);
+      text-decoration: underline;
+    }
+
+    &:visited {
+      color: var(--color-gray);
+      text-decoration: underline;
+    }
+  }
+}
