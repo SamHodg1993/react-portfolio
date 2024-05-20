@@ -59,6 +59,26 @@
         <td colspan="3">Useful</td>
       </tr>
       <tr>
+        <td>SELECT User, Host from mysql.user;</td>
+        <td>Select all users and hosts for the mysql install</td>
+        <td>root@localhost</td>
+      </tr>
+      <tr>
+        <td>CREATE USER 'user'@'localhost' IDENTIFIED BY 'password';</td>
+        <td>Creates a new user</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>GRANT ALL PRIVILEGES ON * . * TO 'user'@'localhost';</td>
+        <td>Give all privileges for all databases to this user</td>
+        <td>To do single DB use - GRANT ALL PRIVILEGES ON dbName . * TO 'user'@'localhost'</td>
+      </tr>
+      <tr>
+        <td>FLUSH PRIVILEGES;</td>
+        <td>Reloads privileges of mysql with your new user privileges</td>
+        <td></td>
+      </tr>
+      <tr>
         <td>DATE_FORMAT(columnName, '%Y-%m-%d %H:%i:%s') as variableName</td>
         <td>Format the date of output</td>
         <td>This is especially useful when dealing with JavaScripts Date Object and Daylight Savings!</td>
