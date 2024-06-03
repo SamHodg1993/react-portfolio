@@ -8,7 +8,7 @@ export default function Navbar() {
   const [selectedValue, setSelectedValue] = useState({ label: "Cheat sheets" });
   const handleSelect = (e) => {
     setSelectedValue(e);
-    window.location.href = `https://sam-hodgkinson.co.uk/${e.value}`;
+    window.location.href = `https://sam-hodgkinson.co.uk${e.value}`;
   };
 
   return (
