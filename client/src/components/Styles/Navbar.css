@@ -1,112 +1,161 @@
 /* ********************************* Variables ******************************************** */
 
-:root{
-    --color-gray: rgb(48,53,55);
-    --color-lighter-gray: rgb(91,104,105);
-    --color-gold: rgb(173,148,84);
-    --color-green: rgb(64,88,96);
-    --color-white: rgb(239,238,228);
-  
-    transition-duration: 0.6s;
+:root {
+  --color-gray: rgb(48, 53, 55);
+  --color-lighter-gray: rgb(91, 104, 105);
+  --color-gold: rgb(173, 148, 84);
+  --color-green: rgb(64, 88, 96);
+  --color-white: rgb(239, 238, 228);
+
+  transition-duration: 0.6s;
+}
+
+/* ********************************* React-Select ******************************************** */
+
+/* react-select */
+.react-select-container {
+  color: black;
+
+  .react-select__control {
+    background-color: rgba(0, 0, 0, 0);
+    border: 0px solid red;
   }
 
+  .react-select__value-container {
+    background-color: var(--color-gray);
+  }
+
+  .react-select__indicators {
+    background-color: var(--color-gray);
+    border-radius: 50%;
+  }
+
+  .react-select__menu {
+    background-color: var(--color-gray);
+    color: var(--color-white);
+  }
+
+  .react-select__menu-list {
+    background-color: var(--color-gray);
+  }
+
+  .react-select__option {
+    background-color: var(--color-gray);
+
+    &:hover {
+      cursor: pointer;
+      color: var(--color-gold);
+      background-color: var(--color-gray);
+    }
+
+    &--is-selected {
+      color: var(--color-gold);
+    }
+  }
+
+  .react-select__placeholder {
+    color: var(--color-white);
+    align-self: flex-end;
+  }
+}
 /* ********************************* Navbar ******************************************** */
-.nav-container{
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--color-gray);
-    color: var(--color-white);
-    height: 10vh;
-    z-index: 11;
-  }
-  
-  .nav-logo{
-    height: 100%;
-    margin-left: 20px;
-  }
-  
-  .nav-list{
-    justify-self: flex-end;
-    display: flex;
-    justify-content: space-evenly;
-    list-style: none;
-  }
-  
-  .nav-item{
-    font-family: 'Poppins';
-    margin-right: 120px;
-    padding: 10px;
-    transition-duration: 0.5s;
-  }
-  
-  .nav-item:hover{
-    cursor: pointer;
-    padding-bottom: 0; 
-    color: var(--color-gold);
-    transform: scale(1.6);
-    transition-duration: 0.5s;
-  }
-  
-  /* ********************************* Mobile Navbar ******************************************** */
-  .mobile-nav-container{
-    height: 10vh;
-    width: 100%;
-    background-color: var(--color-gray);
-    position: sticky;
-    top: 0;
-    left: 0;
-    z-index: 11;
-  }
-  
-  .burger-icon{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 10%;
-    height: 70%;
-    background-color: var(--color-gold);
-    border-radius: 20px;
-    padding: 8px;
-  }
-  
-  .rotate:hover{
-    transform: rotate(90deg);
-    transition-duration: 0.5s;
-    cursor: pointer;
-  }
-  
-  .burger-line{
-    height: 40%;
-    width: 90%;
-    background-color: aliceblue;
-    margin: 5px;
-    border-radius: 10px;
-  }
-  
-  .burger-menu{
-    position: absolute;
-    background-color: var(--color-gray);
-    height: 90vh;
-    width: 100%;
-    color: var(--color-white);
-    z-index: 10;
-  }
-  
-  .burger-menu-item{
-    font-size: 500%;
-    margin: 3% 0 0 3%;
-    list-style: none;
-    width: fit-content;
-  }
-  
-  .burger-menu-item:hover{
-    border-bottom: 3px solid red;
-    color: black;
-    margin-bottom: -3px;
-    cursor: pointer;
-  }
+.nav-container {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-gray);
+  color: var(--color-white);
+  height: 10vh;
+  z-index: 11;
+}
+
+.nav-logo {
+  height: 100%;
+  margin-left: 20px;
+}
+
+.nav-list {
+  justify-self: flex-end;
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  width: 50%;
+}
+
+.nav-item {
+  font-family: "Poppins";
+  /* margin-right: 120px; */
+  padding: 10px;
+  transition-duration: 0.5s;
+}
+
+.nav-item:hover {
+  cursor: pointer;
+  padding-bottom: 0;
+  color: var(--color-gold);
+  transform: scale(1.6);
+  transition-duration: 0.5s;
+}
+
+/* ********************************* Mobile Navbar ******************************************** */
+.mobile-nav-container {
+  height: 10vh;
+  width: 100%;
+  background-color: var(--color-gray);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 11;
+}
+
+.burger-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 10%;
+  height: 70%;
+  background-color: var(--color-gold);
+  border-radius: 20px;
+  padding: 8px;
+}
+
+.rotate:hover {
+  transform: rotate(90deg);
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+.burger-line {
+  height: 40%;
+  width: 90%;
+  background-color: aliceblue;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.burger-menu {
+  position: absolute;
+  background-color: var(--color-gray);
+  height: 90vh;
+  width: 100%;
+  color: var(--color-white);
+  z-index: 10;
+}
+
+.burger-menu-item {
+  font-size: 500%;
+  margin: 3% 0 0 3%;
+  list-style: none;
+  width: fit-content;
+}
+
+.burger-menu-item:hover {
+  border-bottom: 3px solid red;
+  color: black;
+  margin-bottom: -3px;
+  cursor: pointer;
+}
