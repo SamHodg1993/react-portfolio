@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Golang</title>
+    <style>
+    :root {
+        --color-gray: rgb(48, 53, 55);
+        --color-lighter-gray: rgb(91, 104, 105);
+        --color-gold: rgb(173, 148, 84);
+        --color-green: rgb(64, 88, 96);
+        --color-white: rgb(239, 238, 228);
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: var(--color-gray);
+        color: var(--color-white);
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        font-size: 120%;
+      }
+
+      th {
+        background-color: var(--color-lighter-gray);
+      }
+
+      .table-title {
+        font-weight: bold;
+        font-size: 80%;
+        background-color: var(--color-lighter-gray);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>C++ Notes</h1>
+<table>
+  <tr>
+    <th>Code Snippet</th>
+    <th>Outcome</th>
+    <th>Notes</th>
+  </tr>
+
+  <tr class="table-title">
+    <td></td>
+    <td colspan="3">Basics</td>
+  </tr>
+  
+  <tr>
+    <td><code>fmt.Sprintf("%v", 123)</code></td>
+    <td>"123"</td>
+    <td>Default format for the value.</td>
+  </tr>
+  <tr>
+    <td><code>fmt.Sprintf("%+v", struct{Name string}{"John"})</code></td>
+    <td>"{Name:John}"</td>
+    <td>Prints the field names in a struct.</td>
+  </tr>
+  <tr>
+    <td><code>fmt.Sprintf("%#v", struct{Name string}{"John"})</code></td>
+    <td>`struct { Name string }{Name:"John"}`</td>
+    <td>Go-syntax representation of the value.</td>
+  </tr>
+  <tr>
+    <td><code>fmt.Sprintf("%T", 123)</code></td>
+    <td>"int"</td>
+    <td>Type of the value.</td>
+  </tr>
+  <tr>
+    <td><code>fmt.Sprintf("%%")</code></td>
+    <td>"%"</td>
+    <td>A literal percent sign.</td>
+  </tr>
+
+  <tr class="table-title">
+    <td></td>
+    <td colspan="3">String and Character Formatting</td>
+  </tr>
+
+  <tr>
+    <td><code>fmt.Sprintf("%s", "hello")</code></td>
+    <td>"hello"</td>
+    <td>Interprets the value as a plain string.</td>
+  </tr>
+  <tr>
+    <td><code>fmt.Sprintf("%q", "hello")</code></td>
+    <td>"\"hello\""</td>
+    <td>Double-quoted string safely escaped with Go syntax.</td>
+  </tr>
+  <tr>
+    <td><code>fmt.Sprintf("%x", "hello")</code></td>
+    <td>"68656c6c6f"</td>
+    <td>Base 16, with lower-case letters for a-f.</td>
+  </tr>
+  <tr>
+    <td><code>fmt.Sprintf("%X", "hello")</code></td>
+    <td>"68656C6C6F"</td>
+    <td>Base 16, with upper-case letters for A-F.</td>
+  </tr>
+
+  <tr class="table-title">
+    <td></td>
+    <td colspan="3">Integer Formatting</td>
+  </tr>
+
+  <tr>
+    <td><code>fmt.Sprintf("%d", 123)</code></td>
+    <td>"123"</td>
+    <td>Base 10.</td>
+  </tr>
+  <tr>
+    <td><code>fmt.Sprintf("%b", 7)</code></td>
+    <td>"111"</td>
+    <td>Base 2.</td>
+  </tr>
+  <tr>
+    <td><code>fmt.Sprintf("%o", 8)</code></td>
+    <td>"10"</td>
+    <td>Base 8.</td>
+  </tr>
+  <tr>
+    <td><code>fmt.Sprintf("%x", 255)</code></td>
+    <td>"ff"</td>
+    <td>Base 16, with lower-case letters for a-f.</td>
+  </tr>
+  <tr>
+    <td><code>fmt.Sprintf("%X", 255)</code></td>
+    <td>"FF"</td>
+    <td>Base 16, with upper-case letters for A-F.</td>
+  </tr>
+
+  <tr class="table-title">
+    <td></td>
+    <td colspan="3">Floating Point and Complex Formatting</td>
+  </tr>
+
+  <tr>
+    <td><code>fmt.Sprintf("%f", 123.456)</code></td>
+    <td>"123.456000"</td>
+    <td>Decimal point but no exponent.</td>
+  </tr>
+  <tr>
+    <td><code>fmt.Sprintf("%e", 123.456)</code></td>
+    <td>"1.234560e+02"</td>
+    <td>Scientific notation with 'e' for exponent.</td>
+  </tr>
+  <tr>
+    <td><code>fmt.Sprintf("%E", 123.456)</code></td>
+    <td>"1.234560E+02"</td>
+    <td>Scientific notation with 'E' for exponent.</td>
+  </tr>
+  <tr>
+    <td><code>fmt.Sprintf("%g", 123.456)</code></td>
+    <td>"123.456"</td>
+    <td>Uses the shortest representation: %e or %f.</td>
+  </tr>
+  <tr>
+    <td><code>fmt.Sprintf("%G", 123.456)</code></td>
+    <td>"123.456"</td>
+    <td>Uses the shortest representation: %E or %f.</td>
+  </tr>
+
+  <tr class="table-title">
+    <td></td>
+    <td colspan="3">Width and Precision</td>
+  </tr>
+
+  <tr>
+    <td><code>fmt.Sprintf("%6d", 123)</code></td>
+    <td>"   123"</td>
+    <td>Minimum number of characters to be printed.</td>
+  </tr>
+  <tr>
+    <td><code>fmt.Sprintf("%.2f", 123.456)</code></td>
+    <td>"123.46"</td>
+    <td>Number of digits after the decimal point for floating point.</td>
+  </tr>
+  <tr>
+    <td><code>fmt.Sprintf("%6.2f", 123.456)</code></td>
+    <td>"123.46"</td>
+    <td>Width and precision together.</td>
+  </tr>
+</table>
+  </body>
+</html>
