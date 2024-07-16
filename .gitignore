@@ -3,6 +3,8 @@ server/node_modules
 node_modules *
 dist
 dist-ssr
+build
+client/build
 *.local
 deploy.sh
 
