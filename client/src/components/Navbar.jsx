@@ -25,12 +25,12 @@ export default function Navbar() {
           options={[
             { label: "MySQL", value: "/mysql" },
             { label: "Linux", value: "/linux" },
+            { label: "Golang", value: "/golang" },
             { label: "C++", value: "/cpp" },
             { label: "GIT", value: "/git" },
             { label: "JavaScript", value: "/js" },
             { label: "Python", value: "/python" },
             { label: "React", value: "/react" },
-            { label: "Golang", value: "/golang" },
           ]}
           onChange={(e) => handleSelect(e)}
           className="react-select-container"
