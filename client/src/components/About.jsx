@@ -76,7 +76,8 @@ export default function About() {
         )}
         <div>
           <h4 className="about-header">{AboutData[count].header}</h4>
-          <p className="about-info-text">{AboutData[count].info}</p>
+          <p className="about-info-text" dangerouslySetInnerHTML={{ __html: AboutData[count].info }}></p>
+          {/* <p className="about-info-text"  >{AboutData[count].info}</p> */}
         </div>
       </div>
     </div>

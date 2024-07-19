@@ -23,7 +23,7 @@ function App({ setShowPDF, showPDF }) {
       <div style={{ display: "flex", flexDirection: "row", flexWrap: "nowrap", width: "100%" }}></div>
       <p className="sam-h-tech-stack">
         <button onClick={downloadCV}>Download CV</button>
-        <button onClick={() => setShowPDF(!showPDF)}>CV Viewer</button>
+        {/* <button onClick={() => setShowPDF(!showPDF)}>CV Viewer</button> */}
       </p>
     </header>
   );
