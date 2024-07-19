@@ -101,7 +101,22 @@
       <tr>
         <td>SELECT * FROM tableName1 LEFT JOIN tableName2 ON tableName1.columnName = tableName2.columnName</td>
         <td>Join two tables</td>
-        <td>Useful for combining data from two tables</td>
+        <td>Useful for combining data from two tables. Although inner joins are typically preferred as they are more efficient!</td>
+      </tr>
+      <tr>
+        <td>CAST(columnName)AS CHAR</td>
+        <td>Display as text</td>
+        <td>Can be handy for displaying data stored in a column as text when it has a datatype of BLOB</td>
+      </tr>
+      <tr>
+        <td>AES_ENCRYPT(columnName, encryptionKeyString)</td>
+        <td>Used for encrypting data in a column with the sql encryption methods...</td>
+        <td>This is a preferred option if you may have to interact with the SQL database often. Alternatively, you could encrypt progromatically. Depends on the use case</td>
+      </tr>
+      <tr>
+        <td>AES_DECRYPT(columnName, encryptionKeyString)</td>
+        <td>Used for decrypting data in a column with the sql encryption methods...</td>
+        <td>This will only work if the data has been encrypted with the AES_ENCRYPT method.</td>
       </tr>
 
       <tr class="table-title">
