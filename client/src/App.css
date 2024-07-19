@@ -16,8 +16,14 @@
   transition-duration: 0.6s;
 }
 
+@font-face {
+  font-family: "Poppins";
+  src: url("../../fonts/Poppins-Regular.ttf") format("truetype"); 
+}
+
 body {
   background-color: var(--color-gray);
+  font-family: "Poppins"
 }
 
 button {

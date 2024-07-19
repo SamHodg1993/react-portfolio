@@ -17,6 +17,7 @@ export default function Navbar() {
       <ul className="nav-list">
         <Link smooth={true} offset={-100} duration={700} to="home">
           <li className="nav-item">Home</li>
+          {/* <li className="nav-item" style={{ color: "green" }}>Home</li> */}
         </Link>
         <Select
           value={selectedValue.label || "Cheat Sheets"}
@@ -45,6 +46,6 @@ export default function Navbar() {
           <li className="nav-item">Contact</li>
         </Link>
       </ul>
-    </nav>
+    </nav >
   );
 }

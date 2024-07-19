@@ -10,11 +10,17 @@
   transition-duration: 0.6s;
 }
 
+@font-face {
+  font-family: "Poppins";
+  src: url("../../fonts/Poppins-Regular.ttf") format("truetype"); 
+}
+
 /* ********************************* React-Select ******************************************** */
 
 /* react-select */
 .react-select-container {
   color: black;
+  font-family: "Poppins";
 
   .react-select__control {
     background-color: rgba(0, 0, 0, 0);
@@ -88,7 +94,7 @@
 
 .nav-item {
   padding: 10px;
-  font-family: "Poppins" "Robotto" "Sans-serrif";
+  font-family: "Poppins";
   transition-duration: 0.5s;
 }
 
