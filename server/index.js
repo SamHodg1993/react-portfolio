@@ -1,6 +1,6 @@
 const { on } = require("events");
 const express = require("express");
-const cors = require('cors');
+const cors = require("cors");
 
 const app = express();
 require("dotenv").config();
@@ -9,14 +9,14 @@ const nodemailer = require("nodemailer");
 // const something = require('../')
 
 const transport = nodemailer.createTransport({
-  service: 'gmail',
+  service: "gmail",
   auth: {
     user: process.env.SMTP_USERNAME,
-    pass: process.env.SMTP_PASSWORD
-  }
+    pass: process.env.SMTP_PASSWORD,
+  },
 });
 
-app.use(cors())
+app.use(cors());
 app.use(express.static("../client/build"));
 // let the react app to handle any unknown routes
 // serve up the index.html if express does'nt recognize the route
@@ -50,8 +50,12 @@ app.get("/python", (req, res) => {
   res.status(200).sendFile(path.resolve(__dirname, "../client", "python.html"));
 });
 
-app.post('/contact/send', (req, res) => {
+app.post("/contact/send", (req, res) => {
   const { title, body } = req.body;
+
+  if (!title || !body) {
+    return res.status(400).send("Please provide a title AND body for the form.");
+  }
 
   function sendEmail(title, body) {
     const html = `<!DOCTYPE html>
@@ -81,7 +85,7 @@ app.post('/contact/send', (req, res) => {
       {
         from: '"Razors Edge" <razorsedgesupport@razorthorn.com>',
         to: "samhodgkinson9192@gmail.com",
-        subject: 'New message from the sam-hodgkinson.co.uk website...',
+        subject: "New message from the sam-hodgkinson.co.uk website...",
         html: html,
       },
       (error, info) => {
@@ -95,8 +99,8 @@ app.post('/contact/send', (req, res) => {
 
     return info;
   }
-  sendEmail(title, body)
-  res.status(200).send("Your request was received. Thankyou for reaching out!")
+  sendEmail(title, body);
+  res.status(200).send("Your request was received. Thankyou for reaching out!");
 });
 
 const PORT = process.env.PORT;
