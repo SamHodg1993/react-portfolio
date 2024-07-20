@@ -2,7 +2,7 @@ import cv from "../images/Sam Hodgkinson CV_2023_April.pdf";
 // import something from '../'
 import "../App.css";
 
-function App({ setShowPDF, showPDF }) {
+function App() {
   const downloadCV = () => {
     const link = document.createElement("a");
     link.href = cv;
@@ -23,7 +23,6 @@ function App({ setShowPDF, showPDF }) {
       <div style={{ display: "flex", flexDirection: "row", flexWrap: "nowrap", width: "100%" }}></div>
       <p className="sam-h-tech-stack">
         <button onClick={downloadCV}>Download CV</button>
-        {/* <button onClick={() => setShowPDF(!showPDF)}>CV Viewer</button> */}
       </p>
     </header>
   );

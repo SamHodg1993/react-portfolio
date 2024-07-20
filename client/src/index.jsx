@@ -18,16 +18,35 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 function App() {
   const [showPDF, setShowPDF] = useState(false);
+  const [contactModalOpen, setContactModalOpen] = useState(false);
+  const [contactTitle, setContactTitle] = useState("");
+  const [contactBody, setContactBody] = useState("");
 
   return (
     <React.StrictMode>
       {window.innerWidth < 600 && <MobileNavbar />}
-      {window.innerWidth > 600 && <Navbar />}
+      {window.innerWidth > 600 && (
+        <Navbar
+          contactModalOpen={contactModalOpen}
+          setContactModalOpen={setContactModalOpen}
+          contactTitle={contactTitle}
+          setContactTitle={setContactTitle}
+          contactBody={contactBody}
+          setContactBody={setContactBody}
+        />
+      )}
       <Header setShowPDF={setShowPDF} showPDF={showPDF} />
       {showPDF === true && <PDFViewer />}
       <About />
       <Portfolio />
-      <Footer />
+      <Footer
+        contactModalOpen={contactModalOpen}
+        setContactModalOpen={setContactModalOpen}
+        contactTitle={contactTitle}
+        setContactTitle={setContactTitle}
+        contactBody={contactBody}
+        setContactBody={setContactBody}
+      />
     </React.StrictMode>
   );
 }
