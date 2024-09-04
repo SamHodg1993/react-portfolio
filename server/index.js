@@ -18,6 +18,7 @@ const transport = nodemailer.createTransport({
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static("../client/build"));
+app.use(express.json());
 
 app.get("/api/", (req, res) => {
   console.log("Hello from the /api/ endpoint");
@@ -41,7 +42,9 @@ app.get("/js", (req, res) => {
 });
 
 app.get("/node-express", (req, res) => {
-  res.status(200).sendFile(path.resolve(__dirname, "../client", "node-express.html"));
+  res
+    .status(200)
+    .sendFile(path.resolve(__dirname, "../client", "node-express.html"));
 });
 
 app.get("/react", (req, res) => {
@@ -55,11 +58,15 @@ app.get("/python", (req, res) => {
 app.post("/api/contact/send", (req, res) => {
   const { title, body } = req?.body;
 
+  console.log("About to send email");
+
   const contactTitle = title;
   const contactBody = body;
 
   if (!contactTitle || !contactBody) {
-    return res.status(400).send("Please provide a title AND body for the form.");
+    return res
+      .status(400)
+      .send("Please provide a title AND body for the form.");
   }
 
   function sendEmail(contactTitle, contactBody) {
@@ -85,11 +92,11 @@ app.post("/api/contact/send", (req, res) => {
           ${contactTitle}
         </div>
         <div style="text-align: left; font-size: 12px; padding: 15px; width: 70%; margin: 0 auto; border: 1px solid lightgray; border-radius: 5px;">
-          <p>${contactBody}</p> 
+          <p>${contactBody}</p>
         </div<
         <div class="footer" style="text-align: center; margin-top: 20px; color: #888;">
             <p>This email was sent from the sam-hodgkinson.co.uk website.</p>
-        </div>  
+        </div>
     </div>
 </body>
 </html>`;
@@ -107,7 +114,7 @@ app.post("/api/contact/send", (req, res) => {
         } else {
           return info;
         }
-      }
+      },
     );
 
     return info;

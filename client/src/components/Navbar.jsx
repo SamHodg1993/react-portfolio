@@ -7,7 +7,14 @@ import Select from "react-select";
 import "./Styles/Navbar.css";
 import Modal from "react-modal";
 
-export default function Navbar({ contactModalOpen, setContactModalOpen, contactTitle, setContactTitle, contactBody, setContactBody }) {
+export default function Navbar({
+  contactModalOpen,
+  setContactModalOpen,
+  contactTitle,
+  setContactTitle,
+  contactBody,
+  setContactBody,
+}) {
   const [selectedValue, setSelectedValue] = useState({ label: "Cheat sheets" });
   const handleSelect = (e) => {
     setSelectedValue(e);
@@ -26,7 +33,7 @@ export default function Navbar({ contactModalOpen, setContactModalOpen, contactT
           headers: {
             "Content-Type": "application/json",
           },
-        }
+        },
       )
       .then((res) => {
         console.log(res.data); // Correctly access response data
@@ -59,7 +66,14 @@ export default function Navbar({ contactModalOpen, setContactModalOpen, contactT
           parent: {},
         }}
       >
-        <div style={{ display: "flex", flexDirection: "column", height: "100%", position: "relative" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            height: "100%",
+            position: "relative",
+          }}
+        >
           <input
             placeholder="Enter a title"
             style={{
@@ -77,16 +91,29 @@ export default function Navbar({ contactModalOpen, setContactModalOpen, contactT
             }}
             onChange={(e) => setContactBody(e.target.value)}
           />
-          <div style={{ display: "flex", position: "absolute", bottom: "10px" }}>
+          <div
+            style={{ display: "flex", position: "absolute", bottom: "10px" }}
+          >
             <button
-              style={{ height: "2rem", width: "10rem", backgroundColor: "#181818" }}
+              style={{
+                height: "2rem",
+                width: "10rem",
+                backgroundColor: "#181818",
+              }}
               onClick={() => {
                 sendContactRequest(contactTitle, contactBody);
               }}
             >
               Send
             </button>
-            <button style={{ height: "2rem", width: "10rem", backgroundColor: "#FF5555" }} onClick={() => setContactModalOpen(false)}>
+            <button
+              style={{
+                height: "2rem",
+                width: "10rem",
+                backgroundColor: "#FF5555",
+              }}
+              onClick={() => setContactModalOpen(false)}
+            >
               Cancel
             </button>
           </div>
