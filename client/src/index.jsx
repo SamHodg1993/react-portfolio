@@ -3,13 +3,13 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 
 // Component imports
-import Header from "./components/Header";
-import Navbar from "./components/Navbar";
-import MobileNavbar from "./components/MobileNavbar";
-import About from "./components/About";
-import Footer from "./components/Footer";
-import Portfolio from "./components/Portfolio";
-import PDFViewer from "./components/PDFViewer";
+import Header from "./components/Header.jsx";
+import Navbar from "./components/Navbar.jsx";
+import MobileNavbar from "./components/MobileNavbar.jsx";
+import About from "./components/About.jsx";
+import Footer from "./components/Footer.jsx";
+import Portfolio from "./components/Portfolio.jsx";
+import PDFViewer from "./components/PDFViewer.jsx";
 
 // Style imports
 import "./components/Styles/index.css";

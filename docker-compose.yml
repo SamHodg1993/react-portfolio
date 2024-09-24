@@ -1,0 +1,42 @@
+services:
+  traefik:
+    image: traefik:v2.5
+    command:
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+    ports:
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /home/samh/Coding/personal/sam-hodgkinson/traefik.yml:/etc/traefik/traefik.yml:ro
+    networks:
+      - app-network
+
+  frontend:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.frontend.rule=Host(`localhost`) || Host(`sam-hodgkinson.co.uk`)"
+      - "traefik.http.routers.frontend.entrypoints=web"
+    networks:
+      - app-network
+
+  backend:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.backend.rule=(Host(`localhost`) || Host(`sam-hodgkinson.co.uk`)) && PathPrefix(`/api`)"
+      - "traefik.http.routers.backend.entrypoints=web"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

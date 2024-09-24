@@ -2,11 +2,19 @@ import PropTypes from "prop-types";
 import Modal from "react-modal";
 import axios from "axios";
 
-export default function Footer({ contactModalOpen, setContactModalOpen, contactTitle, setContactTitle, contactBody, setContactBody }) {
+export default function Footer({
+  contactModalOpen,
+  setContactModalOpen,
+  contactTitle,
+  setContactTitle,
+  contactBody,
+  setContactBody,
+}) {
   const sendContactRequest = (contactTitle, contactBody) => {
     axios
       .post(
-        "https://sam-hodgkinson.co.uk/api/contact/send",
+        // "https://sam-hodgkinson.co.uk/api/contact/send",
+        "https://api.sam-hodgkinson.co.uk/contact/send",
         {
           title: contactTitle,
           body: contactBody,
@@ -15,7 +23,7 @@ export default function Footer({ contactModalOpen, setContactModalOpen, contactT
           headers: {
             "Content-Type": "application/json",
           },
-        }
+        },
       )
       .then((res) => {
         console.log(res.data); // Correctly access response data
@@ -48,7 +56,14 @@ export default function Footer({ contactModalOpen, setContactModalOpen, contactT
           parent: {},
         }}
       >
-        <div style={{ display: "flex", flexDirection: "column", height: "100%", position: "relative" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            height: "100%",
+            position: "relative",
+          }}
+        >
           <input
             placeholder="Enter a title"
             style={{
@@ -66,16 +81,29 @@ export default function Footer({ contactModalOpen, setContactModalOpen, contactT
             }}
             onChange={(e) => setContactBody(e.target.value)}
           />
-          <div style={{ display: "flex", position: "absolute", bottom: "10px" }}>
+          <div
+            style={{ display: "flex", position: "absolute", bottom: "10px" }}
+          >
             <button
-              style={{ height: "2rem", width: "10rem", backgroundColor: "#181818" }}
+              style={{
+                height: "2rem",
+                width: "10rem",
+                backgroundColor: "#181818",
+              }}
               onClick={() => {
                 sendContactRequest(contactTitle, contactBody);
               }}
             >
               Send
             </button>
-            <button style={{ height: "2rem", width: "10rem", backgroundColor: "#FF5555" }} onClick={() => setContactModalOpen(false)}>
+            <button
+              style={{
+                height: "2rem",
+                width: "10rem",
+                backgroundColor: "#FF5555",
+              }}
+              onClick={() => setContactModalOpen(false)}
+            >
               Cancel
             </button>
           </div>
@@ -96,7 +124,10 @@ export default function Footer({ contactModalOpen, setContactModalOpen, contactT
           </a>
         </p>
         <p className="footer-contact">
-          <a className="footer-link" href="https://www.linkedin.com/in/sam-hodgkinson9192/">
+          <a
+            className="footer-link"
+            href="https://www.linkedin.com/in/sam-hodgkinson9192/"
+          >
             LinkedIn
           </a>
         </p>
