@@ -32,7 +32,11 @@ function Portfolio() {
 
   return (
     <div className="portfolio-container" id="portfolio">
-      <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)} style={modalStyle}>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={() => setModalIsOpen(false)}
+        style={modalStyle}
+      >
         {modalContent}
       </Modal>
 
@@ -40,34 +44,79 @@ function Portfolio() {
         <div className="portfolio-card">
           <img src={SeanTrussHighlands} alt="RST pic" className="rst-image" />
           <span className="portfolio-nav-span">
-            <a href="https://github.com/SamHodg1993/rst-mobile" target="_blank" rel="noreferrer">
+            <a
+              href="https://github.com/SamHodg1993/rst-mobile"
+              target="_blank"
+              rel="noreferrer"
+            >
               Repo
             </a>
-            <a href="http://sams-apps.co.uk" target="_blank" rel="noreferrer">
+            <a
+              href="http://summers.sams-apps.co.uk"
+              target="_blank"
+              rel="noreferrer"
+            >
               Site
             </a>
           </span>
-          {window.innerWidth > 1200 && <p className="portfolio-card-details">Robert Summers Transport</p>}
-          {window.innerWidth > 1200 && <p className="portfolio-card-details">React | TailwindCSS | React-Scroll</p>}
+          {window.innerWidth > 1200 && (
+            <p className="portfolio-card-details">Robert Summers Transport</p>
+          )}
+          {window.innerWidth > 1200 && (
+            <p className="portfolio-card-details">
+              React | TailwindCSS | React-Scroll
+            </p>
+          )}
         </div>
         <div className="portfolio-card">
-          <img src={PortfolioScreenshot} alt="Pic of portfolio" className="portfolio-screenshot" />
+          <img
+            src={PortfolioScreenshot}
+            alt="Pic of portfolio"
+            className="portfolio-screenshot"
+          />
           <span className="portfolio-nav-span">
-            <a href="https://github.com/SamHodg1993/react-portfolio" target="_blank" rel="noreferrer">
+            <a
+              href="https://github.com/SamHodg1993/react-portfolio"
+              target="_blank"
+              rel="noreferrer"
+            >
               Repo
             </a>
-            <a href="http://sam-hodgkinson.co.uk" target="_blank" rel="noreferrer">
+            <a
+              href="http://sam-hodgkinson.co.uk"
+              target="_blank"
+              rel="noreferrer"
+            >
               Site
             </a>
           </span>
-          {window.innerWidth > 1200 && <p className="portfolio-card-details">The source code for this website</p>}
-          {window.innerWidth > 1200 && <p className="portfolio-card-details">React | TailwindCSS | React-Scroll | Full Stack</p>}
+          {window.innerWidth > 1200 && (
+            <p className="portfolio-card-details">
+              The source code for this website
+            </p>
+          )}
+          {window.innerWidth > 1200 && (
+            <p className="portfolio-card-details">
+              React | TailwindCSS | React-Scroll | Full Stack
+            </p>
+          )}
         </div>
         <div className="portfolio-card">
           {/* <div className="to-be-image">To be image</div> */}
-          <img src={DressCodeScreenshot} alt="Pic of dresscode application for teachers" className="portfolio-screenshot" />
-          {window.innerWidth > 1200 && <p className="portfolio-card-details">DressCode Website</p>}
-          {window.innerWidth > 1200 && <p className="portfolio-card-details">React | Sass | MySQL | Full Stack | Node | Express | AWS | Colaborative</p>}
+          <img
+            src={DressCodeScreenshot}
+            alt="Pic of dresscode application for teachers"
+            className="portfolio-screenshot"
+          />
+          {window.innerWidth > 1200 && (
+            <p className="portfolio-card-details">DressCode Website</p>
+          )}
+          {window.innerWidth > 1200 && (
+            <p className="portfolio-card-details">
+              React | Sass | MySQL | Full Stack | Node | Express | AWS |
+              Colaborative
+            </p>
+          )}
           <span className="portfolio-nav-span">
             <p
               className="private-repo"
@@ -76,24 +125,43 @@ function Portfolio() {
                 setModalContent(
                   <div className="modal-container">
                     <h1 className="modal-title">DressCode</h1>
-                    <p className="modal-text">This project is currently in development from a volunteer group called the Scottish Tech Army. As such has a private repo.</p>
-                  </div>
+                    <p className="modal-text">
+                      This project is currently in development from a volunteer
+                      group called the Scottish Tech Army. As such has a private
+                      repo.
+                    </p>
+                  </div>,
                 );
                 setModalIsOpen(true);
               }}
             >
               Repo
             </p>
-            <a href="https://dresscodedev.org.uk/" target="_blank" rel="noreferrer">
+            <a
+              href="https://dresscodedev.org.uk/"
+              target="_blank"
+              rel="noreferrer"
+            >
               Site
             </a>
           </span>
         </div>
         <div className="portfolio-card">
           {/* <div className="to-be-image">To be image</div> */}
-          <img src={Argyll} alt="Pic of dresscode application for teachers" className="portfolio-screenshot" />
-          {window.innerWidth > 1200 && <p className="portfolio-card-details">Argyll interactive map</p>}
-          {window.innerWidth > 1200 && <p className="portfolio-card-details">React | Leaflet | Interactive Map | MYSQL | Full Stack | AWS | Colaborative</p>}
+          <img
+            src={Argyll}
+            alt="Pic of dresscode application for teachers"
+            className="portfolio-screenshot"
+          />
+          {window.innerWidth > 1200 && (
+            <p className="portfolio-card-details">Argyll interactive map</p>
+          )}
+          {window.innerWidth > 1200 && (
+            <p className="portfolio-card-details">
+              React | Leaflet | Interactive Map | MYSQL | Full Stack | AWS |
+              Colaborative
+            </p>
+          )}
           <span className="portfolio-nav-span">
             <p
               className="private-repo"
@@ -102,8 +170,12 @@ function Portfolio() {
                 setModalContent(
                   <div className="modal-container">
                     <h1 className="modal-title">Argyll</h1>
-                    <p className="modal-text">This project is currently in development from a volunteer group called the Scottish Tech Army. As such has a private repo.</p>
-                  </div>
+                    <p className="modal-text">
+                      This project has been completed, but is from a volunteer
+                      group called the Scottish Tech Army. As such has a private
+                      repo.
+                    </p>
+                  </div>,
                 );
                 setModalIsOpen(true);
               }}
@@ -119,8 +191,13 @@ function Portfolio() {
                 setModalContent(
                   <div className="modal-container">
                     <h1 className="modal-title">Argyll</h1>
-                    <p className="modal-text">This project is currently in development. Please check back soon for updates.</p>
-                  </div>
+                    <p className="modal-text">
+                      This project has been completed, but as yet, it is not
+                      being served to the public. If you would like more
+                      information, please get in touch with the Argyll and
+                      Sutherland Highlanders museum team.
+                    </p>
+                  </div>,
                 );
                 setModalIsOpen(true);
               }}
@@ -133,9 +210,20 @@ function Portfolio() {
         </div>
         <div className="portfolio-card">
           {/* <div className="to-be-image">To be image</div> */}
-          <img src={Razorthorn} alt="Pic of dresscode application for teachers" className="portfolio-screenshot" />
-          {window.innerWidth > 1200 && <p className="portfolio-card-details">Razors Edge</p>}
-          {window.innerWidth > 1200 && <p className="portfolio-card-details">React | Vulnerability Manager | Service Offering | MYSQL | Full Stack</p>}
+          <img
+            src={Razorthorn}
+            alt="Pic of dresscode application for teachers"
+            className="portfolio-screenshot"
+          />
+          {window.innerWidth > 1200 && (
+            <p className="portfolio-card-details">Razors Edge</p>
+          )}
+          {window.innerWidth > 1200 && (
+            <p className="portfolio-card-details">
+              React | Vulnerability Manager | Service Offering | MYSQL | Full
+              Stack
+            </p>
+          )}
           <span className="portfolio-nav-span">
             <p
               className="private-repo"
@@ -145,13 +233,20 @@ function Portfolio() {
                   <div className="modal-container">
                     <h1 className="modal-title">Razors Edge</h1>
                     <p className="modal-text">
-                      This is an invite only production solution for large scale vulnerability management. If you are interested in this service, please visit the Razorthorn
-                      website and contact them for more information.
+                      This is an invite only production solution for large scale
+                      vulnerability management. If you are interested in this
+                      service, please visit the Razorthorn website and contact
+                      them for more information.
                     </p>
-                    <a href="https://www.razorthorn.com/contact-us/" target="_blank" rel="noreferrer" className="modal-link">
+                    <a
+                      href="https://www.razorthorn.com/contact-us/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="modal-link"
+                    >
                       Razorthorn Website
                     </a>
-                  </div>
+                  </div>,
                 );
                 setModalIsOpen(true);
               }}
@@ -173,13 +268,20 @@ function Portfolio() {
                   <div className="modal-container">
                     <h1 className="modal-title">Razors Edge</h1>
                     <p className="modal-text">
-                      This is an invite only production solution for large scale vulnerability management. If you are interested in this service, please visit the Razorthorn
-                      website and contact them for more information.
+                      This is an invite only production solution for large scale
+                      vulnerability management. If you are interested in this
+                      service, please visit the Razorthorn website and contact
+                      them for more information.
                     </p>
-                    <a href="https://www.razorthorn.com/contact-us/" target="_blank" rel="noreferrer" className="modal-link">
+                    <a
+                      href="https://www.razorthorn.com/contact-us/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="modal-link"
+                    >
                       Razorthorn Website
                     </a>
-                  </div>
+                  </div>,
                 );
                 setModalIsOpen(true);
               }}
