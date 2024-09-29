@@ -1,0 +1,245 @@
+<!doctype html>
+<html>
+    <head>
+        <title>MySQL Commands Cheatsheet</title>
+        <style>
+            :root {
+                --color-gray: rgb(48, 53, 55);
+                --color-lighter-gray: rgb(91, 104, 105);
+                --color-green: rgb(64, 88, 96);
+                --color-white: rgb(239, 238, 228);
+            }
+
+            body {
+                font-family: monospace;
+                margin: 20px 80px;
+                background-color: var(--color-gray);
+                color: var(--color-white);
+            }
+
+            h1 {
+                text-align: center;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            th,
+            td {
+                padding: 10px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+                font-size: 120%;
+            }
+
+            th {
+                background-color: var(--color-lighter-gray);
+            }
+
+            .table-title {
+                font-weight: bold;
+                font-size: 80%;
+                background-color: var(--color-lighter-gray);
+            }
+
+            .back-button {
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                padding: 10px 20px;
+                background-color: var(--color-lighter-gray);
+                color: var(--color-white);
+                text-decoration: none;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="https://sam-hodgkinson.co.uk" class="back-button">Back</a>
+        <h1>MySQL Commands Cheatsheet</h1>
+        <table>
+            <tr>
+                <th>Query</th>
+                <th>Description</th>
+                <th>Notes</th>
+            </tr>
+
+            <tr class="table-title">
+                <td></td>
+                <td colspan="3">Useful</td>
+            </tr>
+            <tr>
+                <td>SELECT User, Host from mysql.user;</td>
+                <td>Select all users and hosts for the mysql install</td>
+                <td>root@localhost</td>
+            </tr>
+            <tr>
+                <td>
+                    CREATE USER 'user'@'localhost' IDENTIFIED BY 'password';
+                </td>
+                <td>Creates a new user</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>GRANT ALL PRIVILEGES ON * . * TO 'user'@'localhost';</td>
+                <td>Give all privileges for all databases to this user</td>
+                <td>
+                    To do single DB use - GRANT ALL PRIVILEGES ON dbName . * TO
+                    'user'@'localhost'
+                </td>
+            </tr>
+            <tr>
+                <td>FLUSH PRIVILEGES;</td>
+                <td>
+                    Reloads privileges of mysql with your new user privileges
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    DATE_FORMAT(columnName, '%Y-%m-%d %H:%i:%s') as variableName
+                </td>
+                <td>Format the date of output</td>
+                <td>
+                    This is especially useful when dealing with JavaScripts Date
+                    Object and Daylight Savings!
+                </td>
+            </tr>
+            <tr>
+                <td>SELECT COUNT(*) FROM tableName</td>
+                <td>Count the number of rows in a table</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>SELECT AVG(columnName) FROM tableName</td>
+                <td>Calculate the average value of a column</td>
+                <td>Useful for finding average values</td>
+            </tr>
+            <tr>
+                <td>
+                    SELECT AVG(DATEDIFF(columnName, columnName)) FROM tableName
+                </td>
+                <td>Calculate the average date difference</td>
+                <td>Useful for finding the average date difference</td>
+            </tr>
+            <tr>
+                <td>
+                    SELECT * FROM tableName1 LEFT JOIN tableName2 ON
+                    tableName1.columnName = tableName2.columnName
+                </td>
+                <td>Join two tables</td>
+                <td>
+                    Useful for combining data from two tables. Although inner
+                    joins are typically preferred as they are more efficient!
+                </td>
+            </tr>
+            <tr>
+                <td>CAST(columnName)AS CHAR</td>
+                <td>Display as text</td>
+                <td>
+                    Can be handy for displaying data stored in a column as text
+                    when it has a datatype of BLOB
+                </td>
+            </tr>
+            <tr>
+                <td>AES_ENCRYPT(columnName, encryptionKeyString)</td>
+                <td>
+                    Used for encrypting data in a column with the sql encryption
+                    methods...
+                </td>
+                <td>
+                    This is a preferred option if you may have to interact with
+                    the SQL database often. Alternatively, you could encrypt
+                    progromatically. Depends on the use case
+                </td>
+            </tr>
+            <tr>
+                <td>AES_DECRYPT(columnName, encryptionKeyString)</td>
+                <td>
+                    Used for decrypting data in a column with the sql encryption
+                    methods...
+                </td>
+                <td>
+                    This will only work if the data has been encrypted with the
+                    AES_ENCRYPT method.
+                </td>
+            </tr>
+
+            <tr class="table-title">
+                <td></td>
+                <td colspan="3">Database Management</td>
+            </tr>
+            <tr>
+                <td>CREATE DATABASE dbName;</td>
+                <td>Create a new database</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>DROP DATABASE dbName</td>
+                <td>Delete a database</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>USE dbName;</td>
+                <td>Switch to a specific database</td>
+                <td></td>
+            </tr>
+
+            <tr class="table-title">
+                <td></td>
+                <td colspan="3">Table Management</td>
+            </tr>
+            <tr>
+                <td>
+                    CREATE TABLE IF NOT EXISTS tablename (column1 datatype,
+                    column2 datatype, ...);
+                </td>
+                <td>Create a new table</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>DROP TABLE tableName;</td>
+                <td>Delete a table</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>ALTER TABLE tableName ADD column datatype;</td>
+                <td>Modify an existing table</td>
+                <td></td>
+            </tr>
+
+            <tr class="table-title">
+                <td></td>
+                <td colspan="3">Data Manipulation</td>
+            </tr>
+            <tr>
+                <td>SELECT * FROM tablename;</td>
+                <td>Retrieve data from a table</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    INSERT INTO tablename (column1, column2, ...) VALUES
+                    (value1, value2, ...);
+                </td>
+                <td>Insert new records into a table</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    UPDATE tablename SET column1 = value1, column2 = value2
+                    WHERE condition;
+                </td>
+                <td>Modify existing records in a table</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>DELETE FROM tablename WHERE condition;</td>
+                <td>Delete records from a table</td>
+                <td>"DELETE FROM tablename" will delete ALL!</td>
+            </tr>
+        </table>
+    </body>
+</html>

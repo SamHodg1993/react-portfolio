@@ -1,3 +1,5 @@
+version: "3"
+
 services:
   traefik:
     image: traefik:v2.5
@@ -11,9 +13,9 @@ services:
       - "8080:8080"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - /home/samh/Coding/personal/sam-hodgkinson/traefik.yml:/etc/traefik/traefik.yml:ro
+      - ./traefik.yml:/etc/traefik/traefik.yml:ro
     networks:
-      - app-network
+      - traefik-public
 
   frontend:
     build:
@@ -24,7 +26,7 @@ services:
       - "traefik.http.routers.frontend.rule=Host(`localhost`) || Host(`sam-hodgkinson.co.uk`)"
       - "traefik.http.routers.frontend.entrypoints=web"
     networks:
-      - app-network
+      - traefik-public
 
   backend:
     build:
@@ -35,8 +37,8 @@ services:
       - "traefik.http.routers.backend.rule=(Host(`localhost`) || Host(`sam-hodgkinson.co.uk`)) && PathPrefix(`/api`)"
       - "traefik.http.routers.backend.entrypoints=web"
     networks:
-      - app-network
+      - traefik-public
 
 networks:
-  app-network:
-    driver: bridge
+  traefik-public:
+    external: true

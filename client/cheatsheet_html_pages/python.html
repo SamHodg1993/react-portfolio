@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Python Cheatsheet</title>
+        <style>
+            :root {
+                --color-gray: rgb(48, 53, 55);
+                --color-lighter-gray: rgb(91, 104, 105);
+                --color-gold: rgb(173, 148, 84);
+                --color-green: rgb(64, 88, 96);
+                --color-white: rgb(239, 238, 228);
+            }
+
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px 80px;
+                background-color: var(--color-gray);
+                color: var(--color-white);
+            }
+
+            h1 {
+                text-align: center;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            th,
+            td {
+                padding: 10px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+                font-size: 120%;
+            }
+
+            th {
+                background-color: var(--color-lighter-gray);
+            }
+
+            .table-title {
+                font-weight: bold;
+                font-size: 80%;
+                background-color: var(--color-lighter-gray);
+            }
+
+            .back-button {
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                padding: 10px 20px;
+                background-color: var(--color-lighter-gray);
+                color: var(--color-white);
+                text-decoration: none;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="https://sam-hodgkinson.co.uk" class="back-button">Back</a>
+        <h1>Python Cheatsheet</h1>
+        <table>
+            <tr>
+                <th>Code Snippet</th>
+                <th>Description</th>
+                <th>Notes</th>
+            </tr>
+
+            <tr class="table-title">
+                <td></td>
+                <td colspan="3">Variables and Data Types</td>
+            </tr>
+            <tr>
+                <td>x = 5</td>
+                <td>Assign a value to a variable</td>
+                <td>Python is dynamically typed</td>
+            </tr>
+            <tr>
+                <td>x = "Hello"</td>
+                <td>Assign a string to a variable</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>x = True</td>
+                <td>Assign a boolean value to a variable</td>
+                <td></td>
+            </tr>
+
+            <tr class="table-title">
+                <td></td>
+                <td colspan="3">Control Structures</td>
+            </tr>
+            <tr>
+                <td>
+                    if x &gt; 0:<br />
+                    &nbsp;&nbsp;print("x is positive")<br />
+                    elif x &lt; 0:<br />
+                    &nbsp;&nbsp;print("x is negative")<br />
+                    else:<br />
+                    &nbsp;&nbsp;print("x is zero")
+                </td>
+                <td>Conditional statement (if/elif/else)</td>
+                <td>Note the indentation</td>
+            </tr>
+            <tr>
+                <td>
+                    for i in range(5):<br />
+                    &nbsp;&nbsp;print(i)
+                </td>
+                <td>For loop</td>
+                <td>Prints 0, 1, 2, 3, 4</td>
+            </tr>
+            <tr>
+                <td>
+                    while x &lt; 10:<br />
+                    &nbsp;&nbsp;print(x)<br />
+                    &nbsp;&nbsp;x += 1
+                </td>
+                <td>While loop</td>
+                <td>Prints 0, 1, 2, ..., 9</td>
+            </tr>
+
+            <tr class="table-title">
+                <td></td>
+                <td colspan="3">Functions</td>
+            </tr>
+            <tr>
+                <td>
+                    def greet(name):<br />
+                    &nbsp;&nbsp;print("Hello, " + name)
+                </td>
+                <td>Define a function</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>greet("John")</td>
+                <td>Call a function</td>
+                <td>Prints "Hello, John"</td>
+            </tr>
+            <tr>
+                <td>
+                    def add(a, b):<br />
+                    &nbsp;&nbsp;return a + b
+                </td>
+                <td>Function with return value</td>
+                <td></td>
+            </tr>
+
+            <tr class="table-title">
+                <td></td>
+                <td colspan="3">Lists and Dictionaries</td>
+            </tr>
+            <tr>
+                <td>numbers = [1, 2, 3, 4, 5]</td>
+                <td>Create a list</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>numbers.append(6)</td>
+                <td>Add an element to a list</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>person = {"name": "John", "age": 30}</td>
+                <td>Create a dictionary</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>person["city"] = "New York"</td>
+                <td>Add a key-value pair to a dictionary</td>
+                <td></td>
+            </tr>
+
+            <tr class="table-title">
+                <td></td>
+                <td colspan="3">File Operations</td>
+            </tr>
+            <tr>
+                <td>
+                    file = open("data.txt", "r")<br />
+                    contents = file.read()<br />
+                    file.close()
+                </td>
+                <td>Read the contents of a file</td>
+                <td>"r" for read mode</td>
+            </tr>
+            <tr>
+                <td>
+                    file = open("output.txt", "w")<br />
+                    file.write("Hello, World!")<br />
+                    file.close()
+                </td>
+                <td>Write to a file</td>
+                <td>"w" for write mode</td>
+            </tr>
+            <tr>
+                <td>
+                    with open("data.txt", "r") as file:<br />
+                    &nbsp;&nbsp;contents = file.read()
+                </td>
+                <td>Read a file using a context manager</td>
+                <td>File closed automatically</td>
+            </tr>
+        </table>
+    </body>
+</html>
