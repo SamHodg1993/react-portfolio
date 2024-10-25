@@ -13,8 +13,8 @@ export default function Footer({
   const sendContactRequest = (contactTitle, contactBody) => {
     axios
       .post(
-        // "https://sam-hodgkinson.co.uk/api/contact/send",
-        "https://api.sam-hodgkinson.co.uk/contact/send",
+        "https://sam-hodgkinson.co.uk/api/contact/send",
+        //"https://api.sam-hodgkinson.co.uk/contact/send",
         {
           title: contactTitle,
           body: contactBody,

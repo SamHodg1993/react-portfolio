@@ -15,9 +15,10 @@ const transport = nodemailer.createTransport({
   },
 });
 
+const apiFile = require('./apiFile.json');
+
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static("../client/build"));
 app.use(express.json());
 
 app.get("/api/", (req, res) => {
@@ -25,9 +26,29 @@ app.get("/api/", (req, res) => {
   res.status(200).send("Hello from the /api/ endpoint");
 });
 
+app.get("/api/dadJoke/:apiKey", (req,res) => {
+	const {apiKey} = req.params;
+	const correctApiKey = "DadJoke"
+	if(apiKey!== correctApiKey) return res.status(404).send("Unauthorised");
+	const randNum = Math.floor(Math.random() * 101);
+	const randJoke = apiFile["dadJokes"][randNum]
+	res.send(randJoke);
+});
+
+app.get("/api/amadiusFact/:apiKey", (req,res) => {
+	const {apiKey} = req.params;
+	const key ="AmadiusFact"
+	if(apiKey !== key) return res.status(404).send("Unauthorised");
+	const randNum = Math.floor(Math.random() * 10);
+	const randJoke = apiFile["tomFacts"][randNum]
+	res.send(randJoke);
+});
+
 app.get("/", (req, res) => {
   res.sendFile(path.resolve(__dirname, "../client", "build", "index.html"));
 });
+
+app.use(express.static("../client/build"));
 
 app.get("/cpp", (req, res) => {
   res.status(200).sendFile(path.resolve(__dirname, "../client", "cpp.html"));
