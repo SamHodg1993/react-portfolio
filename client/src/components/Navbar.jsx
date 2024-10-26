@@ -138,6 +138,7 @@ export default function Navbar({
             { label: "Python", value: "/python" },
             { label: "React", value: "/react" },
             { label: "Vim", value: "/vim" },
+            { label: "Postgres", value: "/psql" },
           ]}
           onChange={(e) => handleSelect(e)}
           className="react-select-container"

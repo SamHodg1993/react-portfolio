@@ -91,6 +91,11 @@
                     Super useful for getting files like ssl certificates to a
                     server...
                 </td>
+            <tr>
+                <td>sudo lsof -t:8080</td>
+                <td>Lists services that are currently using the reference port.</td>
+                <td>Alternatively you could use sudo lsof -i -P -n | grep LISTEN</td>
+            </tr>
             </tr>
 
             <tr class="table-title">

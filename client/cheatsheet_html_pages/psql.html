@@ -1,0 +1,342 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Postgres Cheatsheet</title>
+        <style>
+            :root {
+                --color-gray: rgb(48, 53, 55);
+                --color-lighter-gray: rgb(91, 104, 105);
+                --color-green: rgb(64, 88, 96);
+                --color-white: rgb(239, 238, 228);
+            }
+
+            body {
+                font-family: monospace;
+                margin: 20px 80px;
+                background-color: var(--color-gray);
+                color: var(--color-white);
+            }
+
+            h1 {
+                text-align: center;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            th,
+            td {
+                padding: 10px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+                font-size: 120%;
+            }
+
+            th {
+                background-color: var(--color-lighter-gray);
+            }
+
+            .table-title {
+                font-weight: bold;
+                font-size: 80%;
+                background-color: var(--color-lighter-gray);
+            }
+
+            .back-button {
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                padding: 10px 20px;
+                background-color: var(--color-lighter-gray);
+                color: var(--color-white);
+                text-decoration: none;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="https://sam-hodgkinson.co.uk" class="back-button">Back</a>
+        <h1>Postgres Cheatsheet</h1>
+        <table id="commandsTable">
+            <tr>
+                <th>Query</th>
+                <th>Description</th>
+                <th>Notes</th>
+            </tr>
+        </table>
+
+        <script>
+            // Function to fetch JSON data
+            async function fetchJSON(url) {
+                const response = await fetch(url);
+                return response.json();
+            }
+
+            // Function to populate the table
+            function populateTable(data) {
+                const table = document.getElementById("commandsTable");
+
+                for (const [category, commands] of Object.entries(data)) {
+                    table.innerHTML += `
+                        <tr class="table-title">
+                            <td colspan="2">${category}</td>
+                        </tr>
+                    `;
+
+                    commands.forEach((cmd) => {
+                        table.innerHTML += `
+                            <tr>
+                                <td>${cmd.query}</td>
+                                <td>${cmd.description}</td>
+                                <td>${cmd?.notes || "-"}</td>
+                            </tr>
+                        `;
+                    });
+                }
+            }
+
+            // Main function to load data and populate table
+            async function loadVimCommands() {
+                try {
+                    const allCommands = {
+                        "System Information & Utility Commands": [
+                            {
+                                query: "\\l",
+                                description: "List all databases",
+                                notes: "psql command (equivalent to 'SHOW DATABASES' in MySQL)",
+                            },
+                            {
+                                query: "\\dt",
+                                description:
+                                    "List all tables in current database",
+                                notes: "psql command (equivalent to 'SHOW TABLES' in MySQL)",
+                            },
+                            {
+                                query: "\\d table_name",
+                                description: "Describe table structure",
+                                notes: "Shows columns, types, and constraints",
+                            },
+                            {
+                                query: "\\df",
+                                description: "List all functions",
+                                notes: "Shows available functions in current database",
+                            },
+                            {
+                                query: "\\dv",
+                                description: "List all views",
+                                notes: "Shows available views in current database",
+                            },
+                            {
+                                query: "\\dn",
+                                description: "List all schemas",
+                                notes: "Shows available schemas",
+                            },
+                            {
+                                query: "\\du",
+                                description: "List all users and their roles",
+                                notes: "Shows user permissions",
+                            },
+                            {
+                                query: "\\timing",
+                                description:
+                                    "Toggle query execution time display",
+                                notes: "Useful for query optimization",
+                            },
+                            {
+                                query: "SELECT current_database();",
+                                description: "Show current database name",
+                                notes: "SQL equivalent of MySQL's SELECT DATABASE()",
+                            },
+                            {
+                                query: "SELECT version();",
+                                description: "Show PostgreSQL version",
+                                notes: "Includes build information",
+                            },
+                            {
+                                query: "SELECT * FROM pg_stat_activity;",
+                                description: "Show all active queries",
+                                notes: "Useful for monitoring database activity",
+                            },
+                            {
+                                query: "SELECT schemaname, tablename, tableowner FROM pg_tables WHERE schemaname NOT IN ('pg_catalog', 'information_schema');",
+                                description: "List all user tables",
+                                notes: "SQL alternative to \\dt",
+                            },
+                            {
+                                query: "SELECT column_name, data_type, character_maximum_length FROM INFORMATION_SCHEMA.COLUMNS WHERE table_name = 'your_table';",
+                                description: "Get detailed column information",
+                                notes: "SQL alternative to \\d table_name",
+                            },
+                            {
+                                query: "SELECT pg_size_pretty(pg_database_size(current_database()));",
+                                description: "Show current database size",
+                                notes: "Returns size in human-readable format",
+                            },
+                            {
+                                query: "SELECT pg_size_pretty(pg_total_relation_size('table_name'));",
+                                description:
+                                    "Show table size including indexes",
+                                notes: "Includes table and index size",
+                            },
+                            {
+                                query: "SELECT pid, age(clock_timestamp(), query_start), usename, query FROM pg_stat_activity WHERE query != '<IDLE>' AND query NOT ILIKE '%pg_stat_activity%' ORDER BY query_start desc;",
+                                description:
+                                    "Show running queries with duration",
+                                notes: "Useful for finding long-running queries",
+                            },
+                            {
+                                query: "SELECT relname as table_name, n_live_tup as row_count FROM pg_stat_user_tables ORDER BY n_live_tup DESC;",
+                                description: "Show row counts for all tables",
+                                notes: "Approximate but fast count of rows in each table",
+                            },
+                            {
+                                query: "SELECT * FROM pg_indexes WHERE tablename = 'your_table';",
+                                description: "Show table indexes",
+                                notes: "Lists all indexes on a table",
+                            },
+                            {
+                                query: "SELECT * FROM pg_available_extensions;",
+                                description: "List available extensions",
+                                notes: "Shows what extensions can be installed",
+                            },
+                            {
+                                query: "SELECT * FROM pg_extension;",
+                                description: "List installed extensions",
+                                notes: "Shows what extensions are currently installed",
+                            },
+                        ],
+                        Useful: [
+                            {
+                                query: "SELECT usename, usesysid, usesuper FROM pg_user;",
+                                description:
+                                    "Select all users and their attributes",
+                                notes: "Similar to MySQL's user list query",
+                            },
+                            {
+                                query: "CREATE USER username WITH PASSWORD 'password';",
+                                description: "Creates a new user",
+                                notes: "",
+                            },
+                            {
+                                query: "GRANT ALL PRIVILEGES ON DATABASE dbname TO username;",
+                                description:
+                                    "Give all privileges for a database to this user",
+                                notes: "Use GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO username; for table-level privileges",
+                            },
+                            {
+                                query: "TO_CHAR(column_name, 'YYYY-MM-DD HH24:MI:SS') as variable_name",
+                                description: "Format the date of output",
+                                notes: "Useful for standardizing date formats across applications",
+                            },
+                            {
+                                query: "SELECT COUNT(*) FROM table_name",
+                                description:
+                                    "Count the number of rows in a table",
+                                notes: "",
+                            },
+                            {
+                                query: "SELECT AVG(column_name) FROM table_name",
+                                description:
+                                    "Calculate the average value of a column",
+                                notes: "Useful for finding average values",
+                            },
+                            {
+                                query: "SELECT AVG(DATE_PART('day', end_date - start_date)) FROM table_name",
+                                description:
+                                    "Calculate the average date difference",
+                                notes: "Useful for finding the average time between dates",
+                            },
+                            {
+                                query: "SELECT * FROM table_name1 LEFT JOIN table_name2 ON table_name1.column_name = table_name2.column_name",
+                                description: "Join two tables",
+                                notes: "Inner joins are typically more efficient when you need matching records from both tables",
+                            },
+                            {
+                                query: "CAST(column_name AS TEXT)",
+                                description: "Display as text",
+                                notes: "Useful for converting other data types to text format",
+                            },
+                            {
+                                query: "pgp_sym_encrypt(column_name, 'encryption_key')",
+                                description:
+                                    "Used for encrypting data in a column",
+                                notes: "Requires pgcrypto extension",
+                            },
+                            {
+                                query: "pgp_sym_decrypt(column_name::bytea, 'encryption_key')",
+                                description:
+                                    "Used for decrypting data in a column",
+                                notes: "Works with data encrypted using pgp_sym_encrypt",
+                            },
+                        ],
+                        "Database Management": [
+                            {
+                                query: "CREATE DATABASE db_name;",
+                                description: "Create a new database",
+                                notes: "",
+                            },
+                            {
+                                query: "DROP DATABASE db_name;",
+                                description: "Delete a database",
+                                notes: "",
+                            },
+                            {
+                                query: "\\c db_name",
+                                description: "Switch to a specific database",
+                                notes: "psql command",
+                            },
+                        ],
+                        "Table Management": [
+                            {
+                                query: "CREATE TABLE IF NOT EXISTS table_name (column1 datatype, column2 datatype, ...);",
+                                description: "Create a new table",
+                                notes: "",
+                            },
+                            {
+                                query: "DROP TABLE table_name;",
+                                description: "Delete a table",
+                                notes: "",
+                            },
+                            {
+                                query: "ALTER TABLE table_name ADD COLUMN column_name datatype;",
+                                description: "Modify an existing table",
+                                notes: "",
+                            },
+                        ],
+                        "Data Manipulation": [
+                            {
+                                query: "SELECT * FROM table_name;",
+                                description: "Retrieve data from a table",
+                                notes: "",
+                            },
+                            {
+                                query: "INSERT INTO table_name (column1, column2, ...) VALUES (value1, value2, ...);",
+                                description: "Insert new records into a table",
+                                notes: "",
+                            },
+                            {
+                                query: "UPDATE table_name SET column1 = value1, column2 = value2 WHERE condition;",
+                                description:
+                                    "Modify existing records in a table",
+                                notes: "",
+                            },
+                            {
+                                query: "DELETE FROM table_name WHERE condition;",
+                                description: "Delete records from a table",
+                                notes: "DELETE FROM table_name with no WHERE clause will delete ALL records!",
+                            },
+                        ],
+                    };
+                    populateTable(allCommands);
+                } catch (error) {
+                    console.error("Error loading Vim commands:", error);
+                }
+            }
+
+            // Call the main function when the page loads
+            window.onload = loadVimCommands;
+        </script>
+    </body>
+</html>
